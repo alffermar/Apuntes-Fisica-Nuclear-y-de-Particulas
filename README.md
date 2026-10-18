@@ -1,2 +1,2 @@
-# Apuntes-Fisica-Nuclear-y-de-Particulas
-Apuntes de la asignatura de Fisica Nuclear y de Particulas de la USAL.
+# Apuntes Física Nuclear y de Partículas
+Este repositorio contiene apuntes y material de estudio de elaboración propia para la asignatura Física Nuclear y de Partículas, basados en las clases impartidas durante el Grado en Física en la Universidad de Salamanca. La redacción del texto, la estructura explicativa y la programación de todas las figuras en LaTeX/TikZ han sido realizadas íntegramente por el autor del repositorio. Este material tiene una finalidad puramente educativa y de consulta personal, y no sustituye a los materiales oficiales de la universidad
