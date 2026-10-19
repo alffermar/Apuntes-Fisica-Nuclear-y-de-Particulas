@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-feynman} % Paquete para diagramas de Feynman
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{feynman}
+        % Nodos de partículas
+        \vertex (i1) at (-1,1) {\(e^{-}\)};
+        \vertex[label=below left: {$\sqrt{\alpha}$}] (v1) at (1,1);
+        \vertex (f1) at (2,-0.6) {\(e^{-}\)};
+        \vertex (i2) at (2.5,1.5) {\(\ Z^0\)};
+        
+        % Diagramas de líneas
+        \diagram* {
+            (i1) -- [fermion] (v1), % Línea del electrón
+            (v1) -- [fermion] (f1), % Línea del electrón desviado
+            (i2) -- [photon] (v1),  % Línea del fotón después de la interacción
+        };
+    \end{feynman}
+\end{tikzpicture}
+
+\end{document}

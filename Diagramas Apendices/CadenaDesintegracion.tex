@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{physics}
+\begin{document}
+\begin{tikzpicture}
+    \draw[thick] (0,0)--(2,0)node[right]{$N_1(t)$};
+    
+    \draw[thick] (1,-2)--(3,-2)node[right]{$N_2(t)$};
+    \draw[dashed, -latex] (1,0) -- (2,-2);
+    \node[] at(2,-1){$\lambda_1$};
+    \draw[thick] (2.5,-4)--(4.5,-4);
+    \draw[dashed, -latex] (2,-2)--(3.1,-4);
+    \node[] at(3,-3){$\lambda_2$};
+\end{tikzpicture}
+\end{document}

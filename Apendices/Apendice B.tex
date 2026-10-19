@@ -1,0 +1,452 @@
+\pagestyle{fancy}
+\fancyhead[R]{Física Nuclear y de Partículas: Apéndice B}
+\fancyhead[L]{4º Grado en Física}
+\chapter{Detección de partículas. Secciones eficaces y anchuras de desintegración}
+\label{chap: Apendice B}
+La mayor parte de la información sobre las propiedades de las partículas y sus interacciones viene de datos experimentales de secciones eficaces de colisión y probabilidades (anchuras) de desintegración.\\\\
+Consideramos un ejemplo de una colisión
+\begin{equation}
+    a+b \longrightarrow c+d
+    \label{eq: colision}
+\end{equation}
+Si denotamos como $b$ al blanco y $a$ al proyectil, entonces la \textbf{sección eficaz} de la reacción \ref{eq: colision} se defina como la probabilidad de transición $W$ por unidad de flujo incidente y de partícula en el blanco. Si denotamos $n_a$ a la densidad de partículas del haz incidente y $v_i$ a la velocidad relativa entre los proyectiles y el blanco, entonces el flujo de partículas por unidad de tiempo a trabés de la unidad de área perpendicular al haz será
+\begin{equation}
+    \phi=n_a v_i
+\end{equation}
+Si el blanco contiene $n_b$ partículas por unidad de área, todas con la misma sección eficaz efectiva $\sigma$, para que ocurra la reacción \ref{eq: colision}, la probabiliad de que cualquier partícula incidente golpee un blanco es $\sigma n_b$. La probabilidad de transición por cada partícula blanco será entonces
+\begin{equation}
+    W=\sigma \phi=\sigma \frac{N_a}{V} v_i \quad \text{con} \quad n_a=\frac{N_a}{V}
+    \label{eq: Probabilidad de transicion para cada particula blanco}
+\end{equation}
+Considerando una partícula en el volumen de normalización, $N_a=1$, entonces 
+\begin{equation}
+    \sigma=\frac{V}{v_i}W \quad \text{con} \quad W=\frac{2\pi}{\hbar} \abs{M_\text{if}}^2\rho_\text{f}
+    \label{eq: seccion eficaz}
+\end{equation}
+La expresión de $W$ es igualmente válida para procesos de desintegración en las que el estado incial es una partícula que se destruya en un estado final
+\begin{equation}
+    X\longrightarrow c+d
+    \label{eq: desintegracion}
+\end{equation}
+En este caso no se necesita haz para generar la reacción, y por tanto la probabilidad de transición para cada partícula inestable será
+\begin{equation}
+    W=\lambda
+    \label{eq: constante de desintegracion}
+\end{equation}
+donde $\lambda$ se denomina \textbf{constante de desintegración}.\\\\
+En este caso 
+\begin{equation}
+    \Gamma=\lambda \hbar= 2\pi \abs{M_\text{if}}^2 \rho_\text{f}
+    \label{eq: anchura de desintegracion}
+\end{equation}
+se denomina a \textbf{anchura de desintegración}, como ya vimos en el capítulo 1
+\begin{tcolorbox}[colback=applegreen!20, colframe=applegreen, title={Análisis dimensional: Sección eficaz, constante y anchura de desintegración}]
+\begin{equation*}
+\begin{aligned}
+        \qty[\sigma]\equiv \frac{L^3}{LT} \frac{1}{ET} E^2 \frac{1}{L}\equiv L^2 \hspace{1.5cm}
+        \qty[\Gamma]\equiv E^2\frac{1}{E}\equiv E \hspace{1.5cm}
+        \qty[\lambda]\equiv \frac{1}{ET}E^2 \frac{1}{E}\equiv T^{-1}
+\end{aligned}
+\end{equation*}
+La unidad habitual en la que se suele medir la sección eficaz en física de partículas es el $\unit{barn}\equiv \unit[10^{-28}]{m^2}$ que es del orden de la superficie de un núcleo.
+
+\begin{equation*}
+        \qty[\sigma]\equiv \frac{1}{E^4T^4}L^6E^2 \frac{E^2T^2}{L^2} \frac{T}{L} \frac{T}{L}\equiv L^2 
+\end{equation*}
+Obteniendo de nuevo que es una superficie.
+\end{tcolorbox}
+
+En ambos casos, colisión o desintegración, la expresión de $M_\text{if}=\bra{\Psi_\text{f}}H'\ket{\Psi_\text{i}}$, se obtuvo bajo la hipótesis de que $H'\equiv V\ll H_0$, siendo $H_0$ el hamiltoniano sin perturbar. Si $H'$ no fuese una perturbación, $M_\text{if}$ no se puede calcular de manera explícita y la expresión de $W$ se toma como una definición de $M_\text{if}$. En estos casos los datos de secciones eficaces y anchuras de desintegración se usan para determinar el elemento de matriz de transición $M_\text{if}$.
+\section{Densidad de estados finales. Casos de interés}
+La densidad de estados finales dependerá del número de partículas en el estado final y su carácter relativista o no relativista. Posteriormente analizaremos distintas situaciones, de momento nos ceñimos al proceso \ref{eq: colision}. Denotemos por $E_0$ la energía total en el centro de masas (CM).
+\begin{equation}
+    E_0=\sqrt{p_\text{f}^2c^2+m_c^2c^4}+\sqrt{p_\text{f}^2c^2+m_d^2c^4} \quad \text{con} \quad \abs{p_c}=\abs{p_d}=p_\text{f}
+    \label{eq: energia total en el CM colision}
+\end{equation}
+\noindent
+\begin{minipage}{0.6\textwidth}
+Necesitamos conocer el número de estados accesibles con momento entre $p_\text{f}$ y $p_\text{f}+\dd p_\text{f}$ en el ángulo sólido subtendido por el detector $\dd \Omega$. Se trata de la intersección del volumen de un casquete esférico de radio $p_\text{f}$ con el ángulo sólido $\dd \Omega$, es decir $$\dd \Omega\, p_\text{f}^2 \,\dd p_\text{f}$$
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[]{Diagramas Apendices/B_AnguloSolido.pdf}
+    \captionof{figure}{Definición de ángulo sólido.}
+\end{minipage}\newpage
+El número de estados dependerá del volumen mínimo de la celda unidad. Al trabajar con ondas planas tomamos cajas de lado $L$ y ponemos condiciones de periodicidad, dando lugar a la cuantización del momento lineal,
+\begin{equation}
+    p_i=n_i2\pi\frac{\hbar}{L} \quad \text{con} \quad n_i=1,2,3...
+\end{equation}
+Por tanto el volumen de la celda unidad mínima será 
+\begin{equation}
+    p_xp_yp_X=\frac{h^3}{L^3}=\frac{h^3}{V}
+\end{equation}
+y por lo tanto la densidad de estados en el estado final será
+\begin{equation}
+\rho_\mathrm{f}=\dv{N}{E_0}=\dd \Omega\, p_\mathrm{f}^2 \frac{V}{h^3} \dv{p_\mathrm{f}}{E_0} g_\mathrm{f}
+\end{equation}
+Siendo $g_\mathrm{f}$ un factor que depende del spin (degeneración). Si integramos a todos los ángulos de los productos de la reacción, la integral del ángulo sólido es $4\pi$, entonces
+\begin{equation}
+    \rho_\mathrm{f}= 4\pi  p_\mathrm{f}^2 \frac{V}{h^3} \dv{p_\mathrm{f}}{E_0} g_\mathrm{f}
+\end{equation}
+y por tanto
+\begin{equation}
+    \sigma=\frac{1}{\pi \hbar^4} V^2 \abs{M_\mathrm{if}}^2 \frac{p_\mathrm{f}^2}{v_i} \dv{p_\mathrm{f}}{E_0}g_\mathrm{f}
+    \label{eq: seccion eficaz estado final}
+\end{equation}
+
+\begin{tcolorbox}[colback=applegreen!20, colframe=applegreen, title={Análisis dimensional: Sección eficaz del estado final}]
+\begin{equation*}
+        \qty[\sigma]\equiv \frac{1}{E^4T^4}L^6E^2 \frac{E^2T^2}{L^2} \frac{T}{L} \frac{T}{L}\equiv L^2 
+\end{equation*}
+Obteniendo de nuevo que es una superficie.
+\end{tcolorbox}
+\subsubsection{Sobre el factor $V^2\abs{M_\mathrm{if}}^2$}
+En los textos no suele aparecer el factor de volumen ya que se trabaja con volumen unidad. Ese factor cancela con la normalización de las ondas planas en $M_\mathrm{if}=\dfrac{1}{\sqrt{V}} \bra{\phi_\text{f}}V\ket{\phi_\text{i}} \dfrac{1}{\sqrt{V}}$. Por tanto, se puede escribir simplemente $\abs{M_\mathrm{if}}^2$, siendo consciente de sus dimensiones.\\\\
+Vamos ahora a proceder al cálculo explícito de la densidad de estados finales en casos partículares de interés. Este cálculo es tanto aplicable a colisiones como desintegraicones. Analizaremos casos de las partículas en el estado final y un caso con tres partículas.
+\newpage
+\subsection{Dos partículas en el estado final. $B$ y $C$ relativistas}
+\noindent Tenemos la desintegración $$A\longrightarrow B+C$$ la densidad de estados en la energía del estado final es
+\begin{equation}
+    \rho_\mathrm{f}=4\pi V\frac{p_\mathrm{f}^2}{\qty(2\pi \hbar)^3} \dv{p_\mathrm{f}}{E_0}
+\end{equation}
+Siendo $E_0=m_Ac^2=\sqrt{p^2_\mathrm{f}c^2+m_B^2c^4}+\sqrt{p^2_\mathrm{f}c^2+m_C^2c^4}$ la energía de la partícula $A$ en reposo. Derivando respecto de $p_\mathrm{f}$ obtenemos$$\dv{E_0}{p_\mathrm{f}}=\frac{p_\mathrm{f}c^2E_0}{E_BE_C}$$
+Por lo tanto la densidad de estados será
+\begin{equation}
+\rho_\mathrm{f}=4\pi V\frac{p_\mathrm{f}^2}{\qty(2\pi \hbar)^3} \frac{E_BE_C}{p_\mathrm{f}c^2E_0}=\frac{V p_\mathrm{f}c}{2\pi^2\qty(\hbar c)^3}  \frac{\qty(E_0-E_c)E_c}{E_0}
+    \label{eq: densidad de estados final desintegracion relativista}
+\end{equation}
+\subsection{Dos partículas en el estado final. $B$ y $C$ no relativistas}
+\noindent La desintegración $\alpha$ \footnote{En el límite $m_C\sim 0$ en lugar de ser una desintegración $\alpha$ es una desintegración electromagnética.} de los núcleos pesados es un ejemplo de este tipo de escenario. Tenemos la desintegración $$A\longrightarrow B+C$$ Supongamos que $T=\qty(m_A-m_B-m_C)c^2\ll m_Bc^2,m_Cc^2$ entonces
+\begin{equation*}
+E_0=m_Ac^2=m_Bc^2+\frac{p_\mathrm{f}^2}{2m_B}+\frac{p_\mathrm{f}^2}{2m_C} \Rightarrow T=\frac{p_\mathrm{f}^2}{2}\qty(\frac{1}{m_B}+\frac{1}{m_C})=\frac{p_\mathrm{f}^2}{2}\frac{m_B+m_C}{m_Bm_C}=\frac{p_\mathrm{f}^2}{2\mu}
+\end{equation*}
+Obteniendo que el momento en el estado final ha de ser $    p_\mathrm{f}=\qty(2\mu T)^{1/2}$. Derivando la energía del sistema respecto al momento en el estado final obtenemos
+\begin{equation}
+    \dv{E_0}{p_\mathrm{f}}=\frac{p_\mathrm{f}}{\mu}
+\end{equation}
+Así la densidad de estados en el estado final será
+\begin{equation}
+    \rho_\mathrm{f}= \frac{2\pi V T^{1/2}}{\qty(2\pi\hbar c)^3}\qty(2\mu c^2)^{3/2}
+    \label{eq: densidad de estados final desintegracion no relativista}
+\end{equation}
+
+\subsection{Dos partículas en el estado final. $B$ y $C$ una partícula pesada y una relativista}
+Supongamos que $T=\Delta M c^2=\qty(m_A-m_B-m_C)c^2$ y que $m_C\ll m_B$.
+\begin{equation}
+    E_0=m_Ac^2= m_Bc^2+\cancelto{0}{\frac{p_\mathrm{f}^2}{2m_B}}+\sqrt{m_C^2c^4+p_\mathrm{f}^2c^2}
+\end{equation}
+Al ser una desintegración a dos cuerpos, el momento ha de ser el mismo para ambas partículas pero la energía cinética se la lleva casi en su totalidad la partícula ligera, por eso podemos despreciar el término de la energía cinética de la partícula $B$.
+\\\\
+De la expresión del momento final
+\begin{equation}
+    p_\mathrm{f}=\frac{1}{c}\qty{\qty[(m_A-m_B)c^2]^2-m_C^2c^4}^{1/2} \Rightarrow \dv{E_0}{p_\mathrm{f}}=\frac{p_\mathrm{f}c^2}{\sqrt{m_C^2c^4+p_\mathrm{f}^2c^2}}=\frac{p_\mathrm{f}}{m_A-m_B}
+\end{equation}
+Por lo que la densidad de estados finales son 
+\begin{equation}
+    \rho_\mathrm{f}=\frac{4\pi V}{\qty(2\pi\hbar)^3}p_\mathrm{f}\qty(m_A-m_B)=\frac{4\pi V}{\qty(2\pi\hbar c)^3} \qty{\qty[(m_A-m_B)c^2]^2-m_C^2c^4}^{1/2} \qty(m_A-m_B)c^2
+\end{equation}
+Para el caso límite $m_C\xrightarrow[]{} 0$ ó $m_C=0$
+\begin{equation}
+    \rho_\mathrm{f}=\frac{4\pi V}{\qty(2\pi\hbar c)^3} \qty[\qty(m_A-m_B)c^2]^2
+\end{equation}
+\subsection{Tres partículas en el estado final. $m_c,m_d\ll m_b\sim m_a$}
+Este problema es una desintegración a tres cuerpos.
+\begin{equation}
+    A\longrightarrow B+C+D
+\end{equation}
+Consideremos un núcleo atómico $A$ que emite dos partículas de massa pequeña $C$ y $D$ y una partícula pesada residual $B$ de masa parecida a la inicial. El núcleo residual $B$ se lleva una parte muy pequeña de la energía cinética disponible $\dfrac{p_B^2}{2m_B}\sim 0$. La energía se distribuye entre los fragmentos ligeros y el núcleo residual se lleva el momento necesario para garantizar su conservación. Los momentos de $C$ y $D$ serán diferentes, pero se satisface
+\begin{equation}
+    E_0=m_Ac^2=m_Bc^2 +\cancelto{0}{\frac{p_\mathrm{f}^2}{2m_B}}+ E_C+E_D \Rightarrow \qty(m_A-m_B)c^2=E_C+E_D
+\end{equation}
+Donde $E_C$ y $E_D$ son las energías de dos partículas relativistas.\\\\
+En este caso debemos calcular la densidad de estados finales para cada uno de los momentos
+\begin{equation}
+\rho_C=\frac{4\pi V}{\qty(2\pi\hbar)^3} p_C^2 \dv{p_C}{E_0} \quad \text{como} \quad \dv{E_0}{p_C}=\frac{p_Cc^2}{E_C} \Rightarrow \boxed{\rho_C=\frac{4\pi V}{\qty(2\pi\hbar c)^3}  E_C\sqrt{E_C^2-m_C^2c^4}}
+\end{equation}
+Análogamente
+\begin{equation}
+    \rho_D=\frac{4\pi V}{\qty(2\pi\hbar c)^3}  E_D\sqrt{E_D^2-m_D^2c^4}
+\end{equation}
+
+Para calcular la densidad de estados finales en los que se cumple $E_0=E_C+E_D$, basta con integrar una de las energías
+\begin{equation}
+    \rho_\mathrm{f}(E_0)=\int^{E_0-m_Dc^2}_{m_Cc^2} \dd E_C \, \rho_C(E_C) \rho_D(E_0-E_C)
+\end{equation}
+Esta expresión se puede evaluar de forma general en límite en el que $E_0\gg m_Cc^2,m_Dc^2$. Desarrollando la integral obtenemos 
+\begin{equation}
+    \rho_\mathrm{f}(E_0)=\frac{(4\pi)^2V^2}{\qty(2\pi \hbar c)^6}\frac{E_0^5}{30}
+    \label{eq: espacio fasico desintegracion a tres cuerpos}
+\end{equation}
+\section{Propiedades generales de procesos de desintegración}
+En un sistema de partículas inestables \textbf{idénticas}, el número de desintegraciones por unidad de tiempo será proporcional al número de partículas que existen en un determinado instante a través de la constante de desintegración $\lambda$ 
+\begin{equation}
+    -\dd N(t)=\lambda N(t) \dd t \Rightarrow N(t)=N(t=0)\exp{-\lambda t}
+    \label{eq: desintegracion radiactiva}
+\end{equation}
+Siendo $N(0)$ el número de partículas en el instante inicial.
+\\\\
+Asociadas a sistemas de partículas inestables, se introducen dos tiempos característicos
+\begin{itemize}
+    \item \textbf{Semivida} $\tau_{\nicefrac{1}{2}}$: Es el tiempo necesario para que el número de partículas se reduzca a la mitad $$N(\tau_{\nicefrac{1}{2}})=\frac{N(0)}{2}=N(0)\exp{-\lambda \tau_{\nicefrac{1}{2}}} \Rightarrow \tau_{\nicefrac{1}{2}}=\frac{\log(2)}{\lambda}$$
+    Es el tiempo que se suele utilizar en Física Nuclear.
+    \item \textbf{Vida media} $\tau$: Es el tiempo promedio que una partícula inestable sobrevive en su estado inicial después de ser creada, se calcula como el promedio de vida de las pratículas
+    \begin{equation}
+        \tau= \frac{ \displaystyle \int^\infty _0 \qty(-\dfrac{\dd N(t)}{\dd t})t\,  \dd t }{\displaystyle \int^\infty _0 \qty(-\dfrac{\dd N(t)}{\dd t}) \, \dd t}
+    \end{equation}
+    Es el tiempo que se suele utilizar en Física de Partículas.
+\end{itemize}
+Estas dos magnitudes están relacionadas a través de $\tau_{\nicefrac{1}{2}} =\log(2) \, \tau$ \newpage
+\noindent
+\begin{minipage}{0.6\textwidth}
+    En general un sistema de partículas inestables se puede desintegrar en distintos estados finales, si queremos calcular cómo varía el número de partículas en el estado inicial tenemos
+    \begin{equation}
+        \dv{N(t)}{t}=-\lambda_1 N(t)-\lambda_2 N(t)
+    \end{equation}
+    Obteniendo 
+    \begin{equation}
+        N(t)=N(0)\exp{-(\lambda_1+\lambda_2)t}
+    \end{equation}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Apendices/Canales.pdf}
+    \captionof{figure}{Canales de desintegración de un estado inicial a dos posibles estados finales}
+    \label{fig: canales desintegracion}
+\end{minipage}\\\\
+Por lo tanto $\lambda=\lambda_1+\lambda_2 \equiv \sum_i \lambda_i$ y la vida media será $\tau=\dfrac{1}{\sum_i\lambda_i}$.\\\\
+Estos dos canales de desintegración tendrán asociados una sección eficaz $\sigma_i$ y una anchura de desintegración $\Gamma_i$, nos interesa saber la razón que existe entre dos canales de desintegración, es decir, $\dfrac{\Gamma_1}{\Gamma_2}$,
+mediante la ecuación \ref{eq: anchura de desintegracion} podemos obtener una expresión analítica
+\begin{equation}
+    \frac{\Gamma_1}{\Gamma_2}=\frac{M_\mathrm{if}^{(1)} \rho^{(1)}(E_\mathrm{f})}{M_\mathrm{if}^{(2)}\rho^{(2)}(E_\mathrm{f})}
+\end{equation}
+
+Se observa que para que dos reacciones tengan espacios fásicos $(\rho^{(i)})$ similares han de tener valores similares de $T^{(1)}\sim T^{(2)}$ para reacciones de scattering; mientras que para desintegraciones, necesitamos  diferencia de masas similares del estado inicial y el final de los distintos procesos $\Delta M_1 ^{(1)} \sim M_1 ^{(2)}$ y $\Delta M_2 ^{(1)} \sim M_2 ^{(2)}$, y valores similares de masa reducida $\mu$, que el caso límite $m_B=m_C \Rightarrow \mu \sim m_C$, es decir valores similares de las masas de las partículas. \\\\
+La misma conclusión se puede hacer en el caso relativista.\\\\
+\noindent Denominamos \textbf{realación de ramificación} $BR_i$, al cociente
+\begin{equation}
+    BR_i=\frac{\lambda_i}{\lambda} \frac{\hbar}{\hbar}=\frac{\Gamma_i}{\Gamma} \Rightarrow \Gamma_i=BR_i\Gamma \Rightarrow \sum_i\Gamma_i=\Gamma
+\end{equation}
+Donde $\Gamma_i$ es la anchura de desintegración de un canal $i$, y se denominan anchuras de desintegración parciales.\\\\
+En caso de la Física Nuclear tendrá gran interés el estudio de cadenas de desintegracion.\\\\
+\noindent \begin{minipage}{0.6\textwidth}
+    Si hacemos el estudio por niveles, obtenemos
+    \begin{equation*}
+        \dd N_1(t)=-\lambda_1 N_1(t) \Rightarrow N_1(t)=N_1(0)\exp{-\lambda_1t}
+    \end{equation*}
+    Para el nivel $N_2(t)$, tendremos la contribución de partículas que aparecen como consecuencia de la desintegración del nivel 1 y la desintegración de este propio nivel.
+    \begin{equation*}
+    \centering
+        \begin{aligned}
+            &\dd N_2(t)=\lambda_1 N_1(t)-\lambda_2 N_2(t)\dd t \quad \text{si}\quad N_2(0)=0 \xrightarrow[]{} \\  \xrightarrow[]{} & N_2(t)=N_1(0)\frac{\lambda_1}{\lambda_2-\lambda_1} \qty(\exp{-\lambda_1t}-\exp{-\lambda_2t})
+        \end{aligned}
+    \end{equation*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[]{Diagramas Apendices/CadenaDesintegracion.pdf}
+\end{minipage}
+\newpage
+\section{Distribución de desintegración: Fórmula de Breit-Wigner}
+Consideremos un sistema físico de energía $E_
+0$ descrito por una función de onda $\Psi(\vec{r})=\Psi(\vec{r},0)$ en $t=0$. Entonces $\Psi(\vec{r},t)=\Psi(\vec{r},0)\exp{-i\dfrac{E_0}{\hbar}t}$. La probabilidad de encontrar al sistema en ese estado de energía $E_0$ es
+\begin{equation}
+N(t)=\abs{\Psi(\vec{r},t)}^2=\abs{\Psi(\vec{r},0)}^2=N(0)
+\end{equation}
+Esa probabilidad es independiente del tiempo. Si el estado se desintegra con una constante de desintegración $\lambda$ dicha probabilidad se escribe como
+\begin{equation}
+    N(t)=N(0)\exp{-\lambda t}
+\end{equation}
+Y para la función de onda que describe el sistema obtenemos
+\begin{equation}
+    \Psi(\vec{r},t)=\Psi(\vec{r},0)\exp{-i\frac{E_0}{\hbar}t}\exp{-\frac{\lambda}{2} t}
+\end{equation}
+Esta expresión sugiere que un estado que no sea estable no vendrá representado por un sólo valor de la energía, $E_0$
+\begin{equation}
+    \Psi(\vec{r},t)=\Psi(\vec{r},0)\exp{-i\qty(E_0-i\frac{\lambda}{2})\frac{t}{\hbar}}
+    \label{eq: funcion de onda estado inestable}
+\end{equation}
+
+sino que podrá tomar diferentes valores dependiendo de $\lambda$, es decir, de $\Gamma=\lambda\hbar$. Podemos estudiar cuál es la probabilidad y distintos valores de la energía calculando la transformada de Fourier
+\begin{equation}
+    \begin{aligned}
+        &\Psi(\vec{r},E)=\frac{1}{2\pi}  \displaystyle\int^\infty_0 \Psi(\vec{r},0)\exp{-i\qty(E_0-i\frac{\lambda}{2})\frac{t}{\hbar}} \exp{i\frac{E}{\hbar}t} \dd t\\
+        &-\frac{\hbar}{i2\pi} \Psi(\vec{r},0)\frac{1}{(E-E_0)+i\dfrac{\lambda\hbar}{2}}=\frac{k}{(E-E_0)+i\dfrac{\lambda\hbar}{2}}
+    \end{aligned}
+\end{equation}\\\\
+\noindent
+\begin{minipage}{0.6\textwidth}
+    Como sólo nos interesa la distribución de energía todos los factores en una constante $k$.
+Por tanto la distribución de probabilidad de encontrar al sistema con una energía entre $E$ y $E+\dd E$ en el entorno de $E_0$ viene dada por 
+\begin{equation}
+    P(E)\dd E=\frac{k^2}{(E-E_0)^2+\qty(\dfrac{\Gamma}{2})^2} \dd E
+    \label{eq: formula de breit-wigner}
+\end{equation}
+Donde $k^2=\dfrac{\Gamma}{2\pi}$ para normalizar la probabilidad.
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+        \flushright
+    \includegraphics[width=1.0\linewidth]{Diagramas Apendices/Lorentziana.pdf}
+    \captionof{figure}{Distribución de la probabilidad}
+    \label{fig:enter-label}
+\end{minipage}
+\clearpage
+Es decir, si medimos la energía del sistema ya no encontramos un valor bien definido como en un estado estacionario, sino una distribución de anchura $\Delta E\equiv \Gamma$.\\\\
+El valor medio de un conjunto grande de medidas seguirá siendo $E_0$, pero el principio de incertidumbre impone limitaciones en la determinación de la energía de un estado inestable de vida media $\tau=\dfrac{1}{\lambda}$. Así
+\begin{equation*}
+    \left. \begin{aligned}
+        & \Delta E \sim \Gamma \\
+        & \Delta t \sim \tau
+    \end{aligned} \right \}  \Rightarrow \Delta E \Delta t \sim \hbar
+\end{equation*}
+\subsection{Scattering Coulombiano}
+\noindent
+\begin{minipage}{0.6\textwidth}
+    El scattering coulombiano de una partícula con energía $E_0$ (cinética), la sección eficaz diferencial viene dado por 
+\begin{equation}
+    \dv{\sigma}{\Omega}=\qty(\frac{\alpha zZ}{4E_0})^2 \sin^{-4}\qty(\frac{\theta}{2})
+\end{equation}
+es decir, la sección eficaz disminuye con el cuadrado de la energía $E^{-2}$. Esta fórmula se corresponde con un scattering elástico de partículas estables. 
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Apendices/ScatteringCoulombiano.pdf}
+    \captionof{figure}{Scattering Coulombiano.}
+    \label{fig: Scattering Coulombiano}
+\end{minipage}
+\\\\
+En el caso de que se formase un estado inestable que se desintegrase, en el término $\abs{M_\mathrm{if}}^2$ de la sección eficaz $\sigma$ o de la anchura de desintegración $\Gamma$, aparecía la contribución de la exponencial decreciente dependiente de $\lambda$, que generará la aparición de la fórmula de Breit-Wigner, generando aumentos de $\sigma$ o $\Gamma$ para los valores de E a los que se forma la resonancia, si representamos $\sigma \sim P(E)$ 
+\\\\
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \begin{tcolorbox}[colback=airforceblue!20, colframe=airforceblue, title={Ejemplo: Aniquilación electrón-positrón}]
+En una aniquilación electrón positrón tenemos el fotón resultante puede desintegrarse en $$\gamma \longrightarrow 
+\left \{ \begin{aligned}
+      &e^-+e^+\\ &\mu^-+\mu^++\\ &\tau^-+\tau^+ 
+\end{aligned} \right.$$ cada uno de estos canales es una resonancia y se reflejan sobre la sección eficaz como se muestra en la figura \ref{fig:Resonancias en seccion eficaz}
+\end{tcolorbox}
+A la hora de medir desintegraciones de una partícula, se buscan los diferentes picos, si aparece algún pico que no se espera eso quiere decir que hay un nuevo canal de desintegración.
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Apendices/SeccionEficazvsEnergia.pdf}
+    \captionof{figure}{Sección eficaz en función de la energía. Los picos representan las diferentes resonancias que tiene una partícula inestable.}
+    \label{fig:Resonancias en seccion eficaz}
+\end{minipage}
+\subsection{Deducción formal de la fórmula de Breit-Wigner}
+La fórmula de Breit-Wigner se puede derivar de manera formal, lo que nos permitirá calcular de forma explícita la anchura de desintegración de una resonancia y la sección eficaz resonante.
+\\\\
+Denotamos por $\phi_0$ la función de ondea de un estado inestable en $t=0$, si recordamos la expresión
+\begin{equation}
+    i\hbar \dv{c_n(t)}{t}=M_\mathrm{0n} \exp{-i\frac{E_0-E_n}{\hbar}t} c_0(t)
+\end{equation}
+En el caso de una partícula estable $c_0(t)\simeq 1$, pero en el caso de una partícula inestable $c_0(t)= \exp{-\dfrac{\Gamma}{\hbar}t}$, lo que satisface la condición de contorno de la ley de decaimiento exponencial 
+\begin{equation}
+    \abs{c_0(t)}^2=\exp{-\dfrac{\Gamma}{\hbar}t}=\exp{-\lambda t}
+\end{equation}
+Si además trabajamos en el sistema de referencia en el que la partícula se desintegra, la energía disponible del sistema es la de la partícula en resposo. Por tanto
+\begin{equation}
+    i\hbar \dv{c_n(t)}{t}=M_{0n} \exp{-i\frac{M-E_n}{\hbar}t}\exp{-\dfrac{\Gamma}{2\hbar}t}
+\end{equation}
+integrando a tiempos mayores que el tiempo característico del sistema, $t\gg \tau$
+\begin{equation}
+    c_n(t\gg)=\frac{M_{0n}}{(M-E_n)-i\dfrac{\Gamma}{2}}
+\end{equation}
+Por tanto, la probabilidad de encontrar al sistema inestable $\phi_0$ de masa $M$ en un estado arbitrario $n$ viene dada por 
+\begin{equation}
+    P_n=\abs{c_n(\infty)}^2=\frac{\abs{M_{0n}}^2}{(M-E_n)^2+\qty(\dfrac{\Gamma}{2})^2}
+\end{equation}
+Esta expresión se puede reescribir de la forma 
+\begin{equation}
+    P_n=\frac{2\pi}{\Gamma} \abs{M_{0n}}^2 P(E_n-M) \quad \text{con} \quad P(E-M)=\frac{\dfrac{\Gamma}{2\pi}}{(E-M)^2+\qty(\dfrac{\Gamma}{2})^2}
+\end{equation}
+Esta probabilidad está normalizada. La función $P(E-M)$, con su máximo en $E=M$ y anchura $\Gamma$, es la fórmula de Breit-Wigner \ref{eq: formula de breit-wigner}. Para obtener la probabilidad de desintegración en un canal determinado de energía $E_n$ se debe sumar a todos los estados cuánticos $n$ accesibles con esa energía. Así la probabilidad de desintegración en un canal $f$ con energía en el intervalo $(E,E+\Delta E)$ será 
+\begin{equation}
+    P_\mathrm{f}(E)\dd E= \frac{2\pi}{\Gamma} \abs{M_\mathrm{0f}}^2 P(E_n-M) \rho_\mathrm{f}(E)\dd E
+\end{equation}
+Como ya hemos visto, como $\Gamma$ es en general pequeño en comparación con $M$, $P_\mathrm{f}(E)$ estará muy concentrada entrno a $E=M$ debido a que la función de Breit-Wigner y portanto la densidad de estados en el estado final se puede aproximar pos su valor en $E=M$
+\begin{equation}
+    P_\mathrm{f}(E)\dd E= \frac{2\pi}{\Gamma}\abs{M_\mathrm{0f}}^2 P(E_n-M) \rho_\mathrm{f}(M)\dd E
+\end{equation}
+Como $\int P_\mathrm{f}(E) \dd E=\dfrac{\Gamma_\mathrm{f}}{\Gamma}$, entonces
+\begin{equation}
+    \Gamma_\mathrm{f}=2\pi \abs{M_\mathrm{0f}}^2 \rho_\mathrm{f}(M)
+\end{equation}
+que como observamos no es más que la regla de oro de Fermi, ya que $\Gamma_\mathrm{f}=\lambda_\mathrm{f}\hbar=W_\mathrm{f}\hbar$ y 
+\begin{equation}
+    W_\mathrm{f}=\frac{2\pi}{\hbar} \abs{M_\mathrm{0f}}^2 \rho_\mathrm{f}(M)
+\end{equation}
+Sustituyendo obtenemos la fórmula de Breit-Wigner
+\begin{equation}
+    P_\mathrm{f}=\frac{1}{2\pi} \frac{\Gamma_\mathrm{f}}{(E-M)^2+\qty(\dfrac{\Gamma}{2})^2}
+\end{equation}
+En el caso de que se considerase el spin, solo hab´ria que promediar al spin inicial y sumar a los spines finales
+\begin{equation}
+    \Gamma_\mathrm{f}=\frac{2\pi}{(2s_i+1)} \abs{\overline{M_\mathrm{0f}}}^2\rho_\mathrm{f}(M)
+\end{equation}
+Donde la barra encima del elemento de matriz indica la suma de los estados finales.
+\section{Sección eficaz resonante}
+Vamos a estudiar ahora el caso en el que una partícula inestable, resonancia, se forman aislada en un proceso de scattering y posteriormente se desinetra en un canal final $f$
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\linewidth]{Diagramas Apendices/EstadoLigadoInestable.pdf}
+    \caption{Representación de un scattering que se da lugar a una resonancia. En el vértice (1) tiene como observable la sección eficaz $\sigma$, mientras que el vértice (2) tiene como observable la anchura de desintegración $\Gamma$.}
+    \label{fig: ScatteringResonancia}
+\end{figure}
+
+En primer lugar vamos a describir la formación de la resonancia a parir del estado inicial. Para ello
+denotamos $n=1 \Rightarrow i$ y $n=0 \Rightarrow$ Resonancia y recuperamos la expresión exacta de los coeficientes 
+\begin{equation}
+    i\hbar \dv{c_n(t)}{t}=\sum_{n=0}^\infty c_n(t) M_{nk} \exp{-i\frac{E_n-E_k}{\hbar}t}
+\end{equation}
+En nuestro caso $c_1(0)=1$ y $c_n(0)=0$ si $n\neq 1$ y por tanto
+\begin{equation}
+    i\hbar \dv{c_n(t)}{t}=M_\mathrm{01} \exp{-i\frac{E_1-E_0}{\hbar}t} 
+\end{equation}
+Esta ecuación describe la formación de la resonancia a través del vértice (1), por ejemplo parando el haz $M_{01}=0$. Por tanto proceso completo vendría descrito por 
+\begin{equation}
+    i\hbar \dv{c_n(t)}{t}=M_\mathrm{01} \exp{-i\frac{E_1-E_0}{\hbar}t} - i\frac{\Gamma}{2}c_0(t)
+\end{equation}
+El primer sumando corresponde a la colisión mientras que el segundo corresponde a la desintegración.
+Si multiplicamos por $\exp{\dfrac{\Gamma}{2\hbar}t}$ e  integramos para $t\gg \dfrac{\hbar}{\Gamma}$ 
+\begin{equation*}
+    i\hbar \dv{}{t} \qty[c_0(t)\exp{\dfrac{\Gamma}{2\hbar}t}]=M_{01} \exp{-i\dfrac{E_1-E_0+i\dfrac{\Gamma}{2}}{\hbar}t} \Rightarrow c_0(t)=\frac{M_{01} \exp{-i\dfrac{E_1-E_0}{\hbar}t}}{\qty(E_1-E_0)+i\qty(\dfrac{\Gamma}{2})}
+\end{equation*}
+La probabilidad de que el proceso finalice en un canal $f$ para un estado inicial de energía arbitraria $E$ será
+\begin{equation}
+    W_\mathrm{f}=\lambda_\mathbf{f}\abs{c_0(t)}^2 \Rightarrow W_\mathrm{f}=\frac{\Gamma_\mathrm{f}}{\hbar}
+    \frac{\abs{M_{01}}^2}{\qty(E_1-E_0)^2+\qty(\dfrac{\Gamma}{2})^2}
+    \label{eq: probabilidad de transición estado final}
+\end{equation}
+Para calcular la sección eficaz del proceso recurrimos a la ecuación \ref{eq: seccion eficaz} y sustituyendo \ref{eq: probabilidad de transición estado final}
+\begin{equation}
+    \sigma_\mathrm{if}=\frac{V}{v_i}\frac{\Gamma_\mathrm{f}}{\hbar}
+    \frac{\abs{M_{01}}^2}{\qty(E-E_0)^2+\qty(\dfrac{\Gamma}{2})^2}
+\end{equation}
+El proceso de formación se puede describir por la regla de oro de Fermi
+\begin{equation}
+    \Gamma_\mathrm{f}=2\pi \abs{M_\mathrm{01}}^2 \rho_\mathrm{i}(E_0) \quad \text{con} \quad \rho_\mathrm{i}(E_0)=
+    \frac{4\pi V}{\qty(2\pi\hbar c)^3} q_\mathrm{i}^2 \dv{q_\mathrm{i}}{E_0}
+\end{equation}
+siendo $q_\mathrm{i}$ el momento en el CM de las partículas que colisionan $\abs{p_a}=\abs{p_b}=q_\mathrm{i}$, es decir
+\begin{equation}
+    E_0=Mc^2=\sqrt{q_ic^2+m_a^2c^4}+\sqrt{q_ic^2+m_b^2c^4} \Rightarrow \dv{E_0}{q_i}=q_\mathrm{i}c^2 \frac{E_a+E_b}{E_aE_b}= v_a+v_b=v_i
+\end{equation}
+En la última igualdad hemos utilizando las expresiones relativistas de la energía y el momento para simplificar la expresión.\\\\
+Entonces
+\begin{equation}
+    \rho_\mathrm{i}(E_0)=\frac{1}{2\pi^2\hbar^3}\frac{V}{v_i}q_\mathrm{i}^2 \Rightarrow \Gamma_\mathrm{i}=2\pi \abs{M_{10}}^2 \frac{1}{2\pi^2\hbar^3}\frac{V}{v_i}q_\mathrm{i}^2
+    \label{eq: densidad de estados inicial de una resonancia}
+\end{equation}
+Y utilizando que los elementos de matriz tienen el mismo módulo, es decir, $\abs{M_{01}}^2=\abs{M_{10}}^2$ obtenemos
+\begin{equation}
+    \sigma_\mathrm{if}=\frac{\pi \hbar^2}{q_\mathrm{i}^2} \frac{\Gamma_\mathrm{i}\Gamma_\mathrm{f}}{(E-E_0)^2+ \qty(\dfrac{\Gamma}{2})} \xrightarrow[\text{degeneracion}]{}
+    \frac{\pi \hbar^2}{q_\mathrm{i}^2} 
+    \frac{2j+1}{(2s_1+1)(2s_2+1)}\frac{\overline{\Gamma}_\mathrm{i}\overline{\Gamma}_\mathrm{f}}{(E-E_0)^2+ \qty(\dfrac{\Gamma}{2})}
+\end{equation}
+Se observa como la sección eficaz se comporta como $q_\mathrm{i}^{-2}\sim E^{-2}$ excepto en las proximidades de la resonancia $E\sim E_0\equiv M$

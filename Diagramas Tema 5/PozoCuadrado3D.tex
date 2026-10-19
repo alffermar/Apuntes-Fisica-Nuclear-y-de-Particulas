@@ -1,0 +1,17 @@
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5, >=latex]
+
+% Ejes
+\draw[->] (0, 0) -- (3, 0) node[anchor=north] { ($r$)};
+\draw[->] (0, -1.5) -- (0, 2) node[anchor=east] {$V(r)$};
+
+% Barrera de Coulomb
+\draw[thick] (1.5, 0) node[above]{$R_0$} -- (1.5, -1);
+\draw[thick] (0, -1) node[left]{$-V_0$} -- (1.5, -1);
+\end{tikzpicture}
+
+\end{document}

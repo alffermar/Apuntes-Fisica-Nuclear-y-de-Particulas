@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \fill[red] (0,0) circle (0.7cm) node[black,yshift=-0.95cm] {$Z$};
+    % Escala
+    
+    \draw[thick,blue,] (-2,1) node[above]{$m\,z\,\vec{v_1}$}-- (1,1);
+
+
+    \draw[thick, blue, dashed] (1,1) to[out=0, in=120](2,0.2);
+        \draw[thick, -latex, blue, dashed] (2,0.2)--(2.6,-1.1)node[above right]{$m\,z\,\vec{v_2}$};
+         \draw[decorate, decoration={snake}, thick] (1.7,0.6) -- (2.5,0.6) node[right]{$\gamma\xrightarrow[]{}h \nu=E_1-E_2$};
+\end{tikzpicture}
+\end{document}

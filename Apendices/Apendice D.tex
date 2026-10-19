@@ -1,0 +1,25 @@
+\pagestyle{fancy}
+\fancyhead[R]{Física Nuclear y de Partículas: Apéndice D}
+\fancyhead[L]{4º Grado en Física}
+\chapter{Operadores tensoriales irreducibles. Teorema de Wigner-Eckart} \label{chap: Apendice E}
+Definimos un operador tensorial irreeducible de orden $k$ como el conjunto de $2k+1$ operadores $$T_q^k \quad \text{con} \quad q=-k,\cdots,k$$ 
+que satisfacen las siguientes relaciones de conmutación con operadores de momento angular $\Vec{J}$
+\begin{equation}
+    \begin{aligned}
+        &\qty[J_z,T_q^{(k)}]=\hbar q T_q^{k}\\
+        & \qty[J_\pm,T_q^{(k)}]=\hbar \sqrt{(q\mp k)(q\pm k+1)} \, T_{q\pm 1}^{(k)}
+    \end{aligned}
+\end{equation}
+Siendo $J_\pm=J_x \pm i J_y$.
+
+\begin{tcolorbox}[colback=amber!20, colframe=amber, title={Teorema de Wigner-Eckart}]
+Un elemento de matriz de un operador tensorial irreducible entre autoestados de momento angular satisface
+\begin{equation}
+    \mel{jm}{T_q^{(k)}}{j^\prime m^\prime}=\braket{j^\prime m^\prime k q}{j m} \frac{\mel{j}{\abs{T^{(k)}}}{j^\prime}}{\sqrt{2j+1}}
+\end{equation}
+Donde $\mel{j}{\abs{T^(k)}}{j^\prime}$ se denomina \textit{elemento de matriz reducido} y no depende de $q,m,m^\prime$; y $\braket{j^\prime m^\prime k q}{j m}$ son los coeficientes de Clebsch-Gordan.
+\end{tcolorbox}
+
+Un caso particular de tensor irreducible de orden 1 es el momento angular con los operadores escaleras definidos como $$J_{\pm 1}=\pm\frac{1}{\sqrt{2}}\qty(J_x\pm iJ_y)=\mp \frac{J_\pm}{\sqrt{2}}, \quad J_0=J_z $$.
+Esta construcción se puede aplicar para cualquier conjunto de operadores definidos en una base irreducible.\\\\
+El teorema de Wigner-Eckart es muy útil para el estudio de desintegraciones que involucren hadrones, pues de una tacada podemos determinar qué elementos de matriz serán nulos de manera trivial a través de los Clebsch-Gordan.

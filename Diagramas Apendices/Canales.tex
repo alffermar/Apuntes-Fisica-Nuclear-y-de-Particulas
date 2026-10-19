@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{physics}
+\begin{document}
+\begin{tikzpicture}
+    \draw[thick] (-2,0)--(2,0)node[right]{$N(t)$};
+    \draw[thick] (-3,-2)node[left]{$f_1$}--(-1,-2);
+    \draw[thick] (3,-2)node[right]{$f_2$}--(1,-2);
+    \draw[dashed, -latex] (-1,0) -- (-2,-2);
+    \draw[dashed, -latex] (1,0) -- (2,-2);
+    \node[] at(-1,-1){$\lambda_1$};
+    \node[] at(2,-1){$\lambda_2$};
+\end{tikzpicture}
+\end{document}

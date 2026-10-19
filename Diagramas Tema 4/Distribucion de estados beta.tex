@@ -1,0 +1,25 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=1 by 2, vertical sep=2.4cm},
+  width=9cm, height=5.2cm, axis lines=left, ytick=\empty,
+  xmin=0, ymin=0, enlarge y limits={upper,value=0.08}, clip=false,
+  every axis label/.append style={font=\small}]
+\nextgroupplot[xlabel={$p$ (MeV/$c$)}, ylabel={$N(p)$}, xmax=3.4, xtick={0,1,2,3}]
+\addplot[thick, domain=0:2.967, samples=120, smooth]
+  {x^2*(2.5-(sqrt(x^2+0.261121)-0.511))^2};
+\node[pin={[pin distance=1.0cm]45:{$p_{\max}=2.967$ MeV/$c$}}] at (axis cs:2.967,0) {};
+\nextgroupplot[xlabel={$T_\mathrm{e}$ (MeV)}, ylabel={$N(T_\mathrm{e})$}, xmax=3.4, xtick={0,1,2}]
+\addplot[thick, domain=0:2.5, samples=120, smooth]
+  {sqrt(x^2+2*x*0.511)*(x+0.511)*(2.5-x)^2};
+\node[pin={[pin distance=1.0cm]45:{$(T_\mathrm{e})_{\max}=Q$}}] at (axis cs:2.5,0) {};
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

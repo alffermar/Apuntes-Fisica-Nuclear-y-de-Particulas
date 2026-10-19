@@ -1,0 +1,109 @@
+\documentclass[tikz, a4paper,12pt]{book} 
+\usepackage[spanish,es-tabla]{babel}	
+% MATEMÁTICAS Y FISICA
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage{cancel}
+
+% SÍMBOLOS Y UNIDADES
+\usepackage{gensymb}
+\usepackage{textcomp}
+\usepackage[nice]{nicefrac}
+\usepackage{units}
+\usepackage{dsfont}
+\usepackage{bbding}
+
+% TABLAS Y ARRAYS
+\usepackage{array,tabularx}
+\usepackage{diagbox}
+\usepackage{blkarray}
+\usepackage{multirow}
+
+% GRÁFICOS Y FIGURAS
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage[bf]{caption}
+\usepackage{subcaption}
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+
+% TIKZ Y DIAGRAMAS
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{standalone}
+\usepackage{simpler-wick}
+
+% LISTAS Y ENUMERACIÓN
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{subeqnarray}
+
+% GEOMETRÍA Y ESPACIADO
+\usepackage[left=2cm, right=2cm, top=3.54cm, bottom=3cm]{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+% APÉNDICES Y GLOSARIOS
+\usepackage{appendix}
+
+% BIBLIOGRAFÍA Y REFERENCIAS (AL FINAL)
+% \usepackage[backend=biber,sorting=none]{biblatex}
+% \usepackage{csquotes}
+\usepackage{hyperref}  % <-- SIEMPRE AL FINAL
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+
+%Colores
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+
+%Redefiniciones y nuevos comandos
+\newcommand{\diff}[3][1]{%
+	\IfBlankTF{#1}{\frac{\mathrm{d}{#2}}{\mathrm{d}{#3}}}%
+	{\frac{\mathrm{d}^{#1} {#2}}{\mathrm{d}{#3}^{#1}}}%
+}%
+
+\newcommand{\pdiff}[3][1]{%
+	\IfBlankTF{#1}{\frac{\partial {#2}}{\partial {#3}}}%
+	{\frac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}%
+}%
+
+\newcommand{\p}{\partial}
+
+\setlength{\intextsep}{10pt}
+\begin{document}
+\include{Portada} \thispagestyle{empty}
+\frontmatter
+\include{Resumen} 
+\tableofcontents 
+\mainmatter
+\setcounter{page}{1}
+\part{Física de Partículas}
+\include{Temas/Tema 1}
+\include{Temas/Tema 2}
+\part{Física Nuclear}
+\include{Temas/Tema 3}
+\include{Temas/Tema 4}
+
+%\include{Temas/Tema 5}
+\part{Apéndices}
+\appendix
+\include{Apendices/Apendice A}
+\include{Apendices/Apendice B}
+\include{Apendices/Apendice C}
+\include{Apendices/Apendice D}
+\addcontentsline{toc}{chapter}{E. Coeficientes de Clebsch-Gordan}
+\includepdf[pages=1]{Coeficientes Clebsch-Gordan.pdf}
+\end{document}

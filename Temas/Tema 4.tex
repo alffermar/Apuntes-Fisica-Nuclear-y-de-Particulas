@@ -1,0 +1,647 @@
+\pagestyle{fancy}
+\fancyhead[R]{Física Nuclear y de Partículas: Tema 4}
+\fancyhead[L]{4º Grado en Física}
+\chapter{Inestabilidad Nuclear}
+
+\section{Radiactividad natural y desintegración nuclear}
+Es lícito pensar que el origen de la física nuclear se debe a las emisiones radiactivas de los minerales naturales de $$\begin{aligned}
+    & ^{238} _{92} \mathrm{U} \xrightarrow{} t_\mathrm{\nicefrac{1}{2}}\sim \unit[4.5\cdot10^{9}]{year}\\
+    &^{232} _{90} \mathrm{Th} \xrightarrow{} t_\mathrm{\nicefrac{1}{2}}\sim \unit[14.1\cdot10^{9}]{year}
+\end{aligned}$$
+Cuyas vidas medias son del orden de la edad de la Tierra.
+La radiactividad artificial nace en 1934 cuando Irene y Frederic Joliot-Curie produjeron el $^{13} _7\mathrm{N}^*$, un núcleo inestable que no existe en la naturaleza, a través de la reacción
+$$\alpha + ^{10} _{\ 5} \mathrm{B}\longrightarrow \textcolor{red}{^{13} _{\ 7}\mathrm{N}^*} +n \textcolor{red}{\longrightarrow ^{13} _{\ 6}\mathrm{C}+ e^++\nu_e}$$
+En 1930 sintetizarán el $^{30}\mathrm{P}$: 
+$$\alpha + ^{27} _{13} \mathrm{Al}\longrightarrow \textcolor{red}{^{30} _{15}\mathrm{P}^*} +n \textcolor{red}{\longrightarrow ^{30} _{14}\mathrm{Si}+ e^++\nu_e}$$
+
+Este tipo de estudios permitieron descubrir cuatro elementos no detectados, el Tecnecio, Prometio, Astato y Francio; sin tienen isótopos estables. Como dato existen más de 40 elementos en la corteza terrestre que son radiactivos.
+
+\subsection{Ley de desintegración radiactiva}
+Poco después de descubrirse la existencia de la radiactividad se observó que la tasa de desintegración disminuye exponencialmente con el tiempo. Vamos a definir una serie de conceptos relevantes en el estudio de la inestabilidad nuclear\\\\
+Definimos la \textbf{actividad} de una muestra , $A$, como el número de núcleos que se desintegran por unidad de tiempo. Si $N$ es el número de átomos de un radionucleido en el instante $t$, entonces 
+\begin{equation}
+    \dv{N(t)}{t}=-\lambda N(t) \Rightarrow N(t)=N_0\exp{-\lambda t}
+    \label{eq: ley de desintegracion radiactiva}
+\end{equation}
+
+Donde $\lambda$ es la constante de desintegración, ésta se define como la probabilidad de desintegración de un núcleo por unidad de tiempo, esta constante se caracteriza por 
+\newpage
+\begin{itemize}
+    \item Ser independiente de $t$.
+    \item No podemos decir cuándo un núcleo va a desintegrarse, pero si podemos describir el comportamiento de un gran número de núcleos idénticos.
+\end{itemize}
+Por lo tanto la actividad la definimos como 
+\begin{equation}
+    A(t)=-\dv{N(t)}{t}=\lambda N(t) =\lambda N_0 \exp{-\lambda t}\Rightarrow [A(t)]\equiv \unit[1]{Bq}=\unit[1]{desintegracion/s}
+    \label{eq: actividad radiactiva}
+\end{equation}
+Como el Bequerelio (Bq) es una unidad muy pequeña, se toma el Curio (Ci) como unidad de medida en una desintegración, esta unidad se define como $$\unit[1]{Ci}=\unit[3.7\cdot 10^{10}]{Bq}$$
+
+Definimos \textbf{semivida} como el periodo de tiempo necesario para que se desintegre la mitad de la muestra
+\begin{equation}
+    A(t_{\nicefrac{1}{2}})=\frac{A_0}{2} \xrightarrow{} \frac{A_0}{2}=A_0\exp{-\lambda t_{\nicefrac{1}{2}}} \Rightarrow \boxed{t_{\nicefrac{1}{2}}=\frac{\log 2}{\lambda}} \footnotemark
+    \label{eq: semivida}
+\end{equation}
+\footnotetext{log es el logaritmo natural, el logaritmo en base 10 lo denotaré como $\log_{10}$.}
+
+Definimos \textbf{vida media} como el promedio de tiempo  que un núcleo individual tarda en desintegrarse
+\begin{equation}
+    \tau=\displaystyle \dfrac{ \displaystyle\int_0^\infty t \abs{\dv{N}{t}}\dd t}{ \displaystyle\int_0^\infty  \abs{\dv{N}{t}}\dd t}= \dfrac{ \displaystyle \int^\infty_0 t \exp{-\lambda t}}{ \displaystyle\int^\infty_0  \exp{-\lambda t}}=\frac{1}{\lambda}=\frac{t_{\nicefrac{1}{2}}}{\log 2}
+    \label{eq: Vida media}
+\end{equation}
+
+Definimos \textbf{actividad específica} como la actividad por unidad de masa
+\begin{equation}
+    A^\prime =\frac{A}{m}=\lambda \frac{N_A}{M_\mathrm{At}}
+    \label{eq: activida especifica}
+\end{equation}
+
+Ahora supongamos que tenemos una cadena de desintegración $N_0\xrightarrow[]{} N_1\xrightarrow[]{} N_2$, de una misma especie en este caso las desintegraciones de las especies $N_1$ y $N_2$ vienen dadas por 
+\begin{equation*}
+     \left. \begin{aligned}
+        &N_1(t)=N_0\exp{-\lambda t}\\
+        &N_2(t)=N_0\qty(1-\exp{-\lambda t})
+    \end{aligned} \right \} N_1(t)+N_2(t)=N_0
+\end{equation*}
+
+Normalmente un núcleo se desintegra en varios estados finales. En este caso, cada desintegración estará caracterizado por una constante $\lambda_i$, así la desintegración de una sustancia será 
+\begin{equation}
+    \eval{\dv{N}{t}}_\mathrm{Total}=\sum_i \eval{\dv{N}{t}}_i=-N\sum_i\lambda_i=-N \lambda_\mathrm{Total} \Rightarrow \boxed{N(t)=N_0\exp{-\lambda_\mathrm{Total}t}}
+\end{equation}
+Para el caso de los productos, tenemos
+\begin{equation}
+    N_{i}(t)=N_0 \frac{\lambda_i}{\lambda_\mathrm{Total}}(1-\exp{-\lambda_\mathrm{Total}t})=N_0BR_i (1-\exp{-\lambda_\mathrm{Total}t})
+\end{equation}
+\newpage
+\subsection{Producción y desintegración de radionucleidos. Radiactividad artificial}
+Los radionucleidos se producen a través de \textbf{bombardeo nuclear}.\\\\
+Supongamos que tenemos una placa de $^{23}\mathrm{Na}$ hiperpuro sobre la que incidimos con un haz de deuterones, con ello produciremos la siguiente reacción:
+\begin{equation*}
+    ^{23}\mathrm{Na} + ^{\ 2}\mathrm{H}\longrightarrow \textcolor{red}{^{24}\mathrm{Na}} + ^{\ 1}\mathrm{H} \textcolor{red}{\xrightarrow[]{\ \lambda_1 \ } \,^{24}\mathrm{Mg}+e^-+\Bar{\nu}_e }
+\end{equation*}
+La tasa de producción del radionucleido $^{24}\mathrm{Na}$ será $R=N_{0}\phi\sigma$. Como el número de partículas que hay en la placa es del orden (incluso superior) del número de Avogadro,  podemos suponer que la cantidad de  núcleos padres es constante; por otro lado, la sección eficaz del haz es $\sigma=\unit[1]{b}=\unit[10^{-24}]{cm^{-2}}$, mientras que el flujo de deuterones es de $\phi=\unit[10]{cm^{-2}\,s^{-1}}$ por lo tanto tenemos que la probabilidad de producción será $\phi \sigma =\unit[10^{-10}]{s^{-1}}\equiv \unit[10^{-6}]{hour^{-1}}$, con lo que asumimos que la tasa de producción es constante.\\\\
+La expresión que nos da la tasa de producción en función del tiempo es
+
+\begin{equation}
+    \dd N_{^{24}\mathrm{Na}}=R\dd t-\lambda_1N_{^{24}\mathrm{Na}}\dd t \Rightarrow N_{^{24}\mathrm{Na}}=\frac{R}{\lambda_1}\qty(1-\exp{-\lambda_1 t})
+    \label{eq: tasa de produccion}
+\end{equation}
+
+En función del tiempo de irradiación, tenemos tres regímenes diferentes\\
+\noindent 
+\begin{minipage}{0.6\textwidth}
+\begin{itemize}
+    \item $t\ll t_{\nicefrac{1}{2}} \Rightarrow A_{^{24}\mathrm{Na}} \simeq R\lambda_1t$
+    \item $t\gg t_{\nicefrac{1}{2}} \Rightarrow A_{^{24}\mathrm{Na}} \simeq R$
+    \item Cuando se produce la desconexión del haz incidente $t=t_{\mathrm{des}} \Rightarrow A_{^{24}\mathrm{Na}}\simeq R\qty(1-\exp{-\lambda_1 t_\mathrm{des}}) \exp{-\lambda_1(t-t_\mathrm{des})}$
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Tema 4/Actividadmuestra radiada.pdf}
+    \captionof{figure}{Diferentes regímenes de actividad de una muestra.}
+    \label{fig: actividad de una muestra}
+\end{minipage}
+\\\\
+Los radionucleidos tienen infinidad de aplicaciones, aunque las más conocidas son las aplicaciones médicas.
+\subsection{Series radiactivas. Ecuaciones de Bateman}
+En la naturaleza los núcleos hijos son estables y se desintegran en otra serie de productos, supongamos que tenemos una cadena de desintegraciones compuesta por tres especies
+$$N_1\xrightarrow[]{\ \lambda_1\ } N_2 \xrightarrow[]{\ \lambda_2 \ } N_3$$
+Estudiemos la variación de las distintas especies nucleares
+\begin{equation}
+    \dv{N_1}{t}=-\lambda_1 N_1, \quad \dv{N_2}{t}=\lambda_1 N_1-\lambda_2 N_2, \quad \dv{N_3}{t}=\lambda_2 N_2
+    \label{eq: variaciones serie de desintegracion}
+\end{equation}
+
+Estamos en el caso más general, por lo que supondremos que en $t=0$ tenemos $N_{1,0},N_{2,0},N_{3,0}$ partículas de cada una de las especies. Cada una de estas ecuaciones tendrá solución
+
+\begin{equation}
+    N_1(t) = N_{1,0} \exp{-\lambda_1 t}
+    \label{eq: desintegracion nucleo padre}
+\end{equation}
+
+\begin{equation}
+    N_2(t) = N_{1,0} \frac{\lambda_1}{\lambda_2 - \lambda_1} 
+    \qty(\exp{-\lambda_1 t} - \exp{-\lambda_2 t}) 
+    + N_{2,0} \exp{-\lambda_2 t}
+    \label{eq: desintegracion nucleo hijo inestable}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        N_3(t) = & N_{1,0} \qty(1 + \frac{1}{\lambda_2 - \lambda_1}
+        \qty(\lambda_1 \exp{-\lambda_1 t} - \lambda_2 \exp{-\lambda_2 t})) \\
+        & + N_{2,0} \qty(1 - \exp{-\lambda_2 t}) + N_{3,0}
+    \end{aligned}
+    \label{eq: desintegracion nucleo nieto estable}
+\end{equation}
+
+Para tiempos $t\ll t_{\nicefrac{1}{2},1}\  (\lambda_2\gg \lambda_1)$ podemos considerar que la actividad de la especie $N_1$ es constante y decimos que las especies están en \textbf{equilibrio secular}, si además tenemos que $t\gg t_{\nicefrac{1}{2},2}$ tendremos que $\dfrac{A_2}{A_1} \approx 1$ , en la figura \ref{fig: actividad de una muestra}, es el valor máximo que alcanza la actividad. \\\\
+Si consideramos tiempos  $t > t_{\nicefrac{1}{2},1}\  (\lambda_2> \lambda_1)$ las actividades de los núcleos pares e hijos son proporcionales después de cierto tiempo transcurrido.\\\\
+Si calculamos el cociente entre las actividades de las especies $N_2$ y $N_1$, a partir de las ecuaciones \ref{eq: desintegracion nucleo hijo inestable} y \ref{eq: desintegracion nucleo padre} tenemos
+\begin{equation*}
+    \frac{A_2}{A_1}=\frac{\lambda_2}{\lambda_2-\lambda_1}\qty(1-\exp{-(\lambda_2-\lambda_1)t})
+\end{equation*}
+Recuperando la condición $\lambda_2 > \lambda_1$ tenemos que para $t\gg  \dfrac{1}{\lambda_2-\lambda_1}$ podemos aproximar el cociente por $$\frac{A_2}{A_1}=\frac{\lambda_2}{\lambda_2-\lambda_1}\approx 1$$
+Esta ultima igualdad es lo que se conoce como \textbf{equilibrio tansitorio}. \\\\
+Por último tenemos la situación en la que $\lambda_2<\lambda_1$, en este caso el cociente entre actividades será:
+\begin{equation*}
+    \frac{A_2}{A_1}=\frac{\lambda_2}{\lambda_2-\lambda_1}\qty(1-\exp{-(\lambda_2-\lambda_1)t}) \xrightarrow[]{\lambda_2<\lambda_1} \frac{A_2}{A_1}=\frac{\lambda_2}{\abs{\lambda_2-\lambda_1}}\qty(\exp{(\lambda_2-\lambda_1)t}-1)
+\end{equation*}
+Que para $t\gg t_{\nicefrac{1}{2},1}$ la actividad de la especie $N_2$ es 
+\begin{equation*}
+    A_2(t)=A_{1,0}\frac{\lambda_2}{\lambda_1-\lambda_2}\exp{-\lambda_2t}
+\end{equation*}
+
+A esta situación se le conoce como \textbf{no equilibrio}.
+
+\subsubsection{Ecuaciones de Bateman}
+Las expresiones anteriores se pueden extender al caso general de cadenas con varias generaciones de desintegraciones nucleares. El caso general es 
+\begin{equation}
+    N_1\xrightarrow[]{\lambda_1} N_2 \xrightarrow[]{\lambda_2} \cdots \xrightarrow[]{\lambda_{n-1}} N_n
+    \label{eq: cadena general}
+\end{equation}
+
+Y la actividad del $n$-ésimo radionucleido es 
+\begin{equation}    A_n(t)=N_{1,0}\Bigg(\prod_{i=1}^n\lambda_i\Bigg)\Bigg(\sum_{k=1}^n\frac{e^{-\lambda_kt}}{\prod_{j=1}^n\left(\lambda_j-\lambda_k\right)}\Bigg)
+\label{eq: actividad del nesimo nucleido de una cadena radiactiva}
+\end{equation}
+
+Para el caso del equilibrio secular tenemos $$A_1(t)=A_2(t)=\cdots = A_{n-1}(t)$$
+
+\subsection{Radiactividad natural}
+Algunos de los elementos naturales que constituyen la corteza terrestre son radiactivos (unos 40). Una parte procede de elementos formados junto con la Tierra, y que debido a su larga vida media aún son medidos; y otra procede de los núcleos hijos productos de los desintegrados. Otra componente está formada por elementos producidos en colisiones de rayos cósmicos con los núlceosde la atmósfera.\\\\
+La radiactividad natural de origen terrestre es debida en su mayor parte a las desintegraciones de las cadenas de elementos pesados (tranuránidos, $Z>83$). De ellos únicamente el radón supone un problema serio para la salud.\\\\
+La mayoría de elementos pesados se desintegran por dos canales: $\alpha$ y $\beta$. Esto nos permite definir cuatro series de desintegraciones fundamentales: $^{232}\mathrm{Th}(4n), ^{241}\mathrm{Np}(4n+1), ^{238}\mathrm{U}(4n+2), ^{241}\mathrm{U}(4n+3)$, debido a que la vida media del $^{241}\mathrm{Np}$ es ``sólo'' de 2 millones de años, esta cadena ya no existe de forma natural en la Tierra.
+\subsection{Datación radiométrica: Carbono-14}
+
+El $^{14}\mathrm{C}$ se forma constantemente en la atmósfera debido a la acción de los rayos cósmicos. $$ _{\ 7}^{14}\mathrm{N} +n \longrightarrow{} _{\ 6} ^{14} \mathrm{C}+p$$
+
+De tal forma que la composición isotópica del C en nuestro planeta es de $98.89\%$ de $^{12}\mathrm{C}$, $1.11\%$ de $^{13}\mathrm{C}$ y $10^{-10}\%$ de $^{14}\mathrm{C}$.\\\\
+Un organismo vivo absorbe $^{14}\mathrm{C}$ durante toda su vida. Cuando muere, deja de introducir carbono-14 nuevo y el que posee sólo se desintegra. Por lo tanto, midiendo su actividad podemos obtener la fecha de fallecimiento. Si denominamos al tiempo de fallecimiento como $t_0$ a partir de la ecuación \ref{eq: ley de desintegracion radiactiva} tenemos 
+$$N_{^{14}\mathrm{C}}(t)=N_{^{14}\mathrm{C}}(t_0) \exp{-\lambda (t-t_0)} \Rightarrow \Delta t= t-t_0= \frac{t_{\nicefrac{1}{2}}}{\log 2} \log(\frac{N_{^{14}\mathrm{C}}(t)}{N_{^{14}\mathrm{C}}(t_0)})$$
+
+Recordemos que $t_{\nicefrac{1}{2}}({}^{14}\mathrm{C})=\unit[5730]{year}$, la intensidad de $^{14}\mathrm{C}$ deja de ser medible a partir de $t\approx 10 t_{\nicefrac{1}{2}}$, por lo tanto es aplicable entre 50 y 60000 años.\\\\ La datación por carbono-14 tiene varios problemas, debido a la quema de combustibles fósiles la concentración de $^{12}\mathrm{C}$ ha cambiado. Otro problema son las pruebas nucleares realizadas durante la Guerra Fría, lo que ha incrementado la concentración de $^{14}\mathrm{C}$ en la atmósfera.
+
+\subsection{Datación radiométrica geológica: Rubidio-87}
+Para medir escalas geológicas no podemos medir la actividad en función del tiempo, por lo que estudiamos la razón entre el núcleo padre y el núcleo hijo.\\\\
+La más utilizada es la desintegración $\beta^- $ del $^{87}\mathrm{Rb}$ en $^{87} \mathrm{Rb}$. Una característica del Sr es que tenemos dos isótopos estables con una composición isotópica similar: $^{86}\mathrm{Sr}, ^{87}\mathrm{Sr}$.\\\\
+Una primera posibilidad es suponer que en el instante de tiempo inicial, cuando la roca se formó, sólo existieran núcleos padre y que no han aparecido nuevos núcleos padre en todo el tiempo transcurrido. $$N_{^{86}\mathrm{Sr}}(t_\mathrm{hoy})+N_{^{86}\mathrm{Rb}}(t_\mathrm{hoy})=N_{^{86}\mathrm{Rb}}(t)$$ Recuperando de nuevo la ecuación \ref{eq: ley de desintegracion radiactiva} vemos que 
+$\Delta t=\dfrac{t_{\nicefrac{1}{2}}}{\log 2} \log(1+\dfrac{N_{^{87}\mathrm{Sr}}(t)}{N_{^{87}\mathrm{Rb}}(t_0)})$\\\\
+Supongamos ahora que cuando se formó la roca existieran núcleos hijos en el material, 
+$$N_{^{86}\mathrm{Sr}}(t_\mathrm{hoy})+N_{^{86}\mathrm{Rb}}(t_\mathrm{hoy})=N_{^{86}\mathrm{Rb}}(t)+N_{^{86}\mathrm{Sr}}(t)$$
+En este caso la expresión anterior no es vlaída. Lo que hacemos es utilizar otro isótopo estable del núcleo hijo $N_{^{86}\mathrm{Sr}}(t_\mathrm{hoy})=N_{^{86}\mathrm{Sr}}(t_0)$. Obteniendo $$\frac{N_{^{87}\mathrm{Sr}}(t_\mathrm{hoy})}{N_{^{86}\mathrm{Sr}}(t_\mathrm{hoy})}=m\frac{N_{^{86}\mathrm{Sr}}(t_\mathrm{hoy})}{N_{^{87}\mathrm{Rb}}(t_\mathrm{hoy})}+b$$
+El procedimiento consiste en localizar rocas con distintos minerales ricos en estroncio y midiendo la proporción de estroncio-87 y rubidio-87 respecto a la de estroncio-86 obtenemos una serie de puntos que ajustamos a una recta y su pendiente nos dará la edad.
+\section{Desintegración beta. Modelo de Fermi}
+
+La desintegración $\beta$ nuclear constituye la primera manifestación de la interacción débil y su estudio introdujo algunos de los cambios más significativos en la Física del siglo XX. Hacia 1920 se había establecido claramente la presencia de un espectro continuo de electrones de origen nuclear en la desintegración $\beta$ como consecuencia de ser una desintegración a 3 cuerpos. Además por ser producto de la interacción débil no conserva paridad.\\\\
+Recordamos que la desintegración $\beta$ compite con la captura electrónica pero se diferencia de esta debido a la emisión de rayos X característicos.\\\\ 
+En 1934 Fermi formula una teoría de la desintegración $\beta$ utilizando el neutrino y consigue explicar la forma de los espectros.
+\newpage
+\subsubsection{Balance energético. Estudio del factor \textit{Q}}
+Esta sección corresponde al desarrollo de la sección \ref{sec: Tipos de desintegraciones radiactivas}. Recordando la definición del factor $Q$ dada por la ecuación \ref{eq: factor Q} \footnote{Tomaremos $c=1$ en esta sección para ahorrar términos y en el caso de ser necesarias se incluirán. También despreciaremos las energías de ligadura salvo cuando sea necesario.}
+\begin{itemize}
+    \item Desintegración $\beta^-$: De la reacción 
+      \begin{equation*}
+        ^A _Z X_N \longrightarrow {}^{A} _{Z+1} Y_{N-1}+e^-+\Bar{\nu}_e
+        \end{equation*}
+    Luego el factor $Q_{\beta^-}=m(^{A} _{Z}X_N )-\qty[ m({}^{A} _{Z+1} Y_{N-1})+ m_e- \textcolor{red}{m_e}\footnotemark ]$ Así para que se produzca una $\beta^-$ simplemente se necesita que la masa del átomo final sea menor que la del inicial. Si expresamos la definición del factor $Q_{\beta^-}$ en términos de la masa nuclear y la masa del electrón tenemos 
+    \begin{equation*}
+        \begin{aligned}
+            Q_{\beta^-}=&\qty[m_\mathrm{Nuclear}({}^A_Z X_N)+Zm_e]-\qty[m_\mathrm{Nuclear}({}^A_{Z+1} Y_{N-1})+(Z+1)m_e-m_e]=\\ &m_\mathrm{Nuclear}({}^A_Z X_N)-m_\mathrm{Nuclear}({}^A_{Z+1} Y_{N-1})=m({}^A_Z X_N)-m({}^A_{Z+1} Y_{N-1})
+        \end{aligned}
+    \end{equation*}
+    \item Desintegración $\beta^+$: De la reacción
+          \begin{equation*}
+        ^A _Z X_N \longrightarrow {}^{A} _{Z-1} Y_{N+1}+e^++\nu_e
+        \end{equation*}
+    Luego el factor $Q_{\beta^+}=m(^{A} _{Z}X_N )-\qty[ m({}^{A} _{Z-1} Y_{N+1})+ m_e+ \textcolor{red}{m_e}\footnotemark ]$. Si expresamos la definición del factor $Q_{\beta^-}$ en términos de la masa nuclear y la masa del electrón tenemos 
+    \begin{equation*}
+        \begin{aligned}
+            Q_{\beta^-}=&\qty[m_\mathrm{Nuclear}({}^A_Z X_N)+Zm_e]-\qty[m_\mathrm{Nuclear}({}^A_{Z-1} Y_{N+1})+(Z-1)m_e+m_e]=\\ &m_\mathrm{Nuclear}({}^A_Z X_N)-m_\mathrm{Nuclear}({}^A_{Z-1} Y_{N+1})-2m_e= m({}^A_Z X_N)-m({}^A_{Z-1} Y_{N+1})-2m_e
+        \end{aligned}
+    \end{equation*}
+    Este proceso sólo se dará si el núcleo padre y el núcleo hijo se diferencian en $2m_e\sim \unit[1]{MeV}$.
+    \item Captura electrónica $\varepsilon$: De la reacción
+    \begin{equation*}
+        e^-+{} ^A _Z X_N\longrightarrow{} ^{A} _{Z-1}Y_{N+1} + \nu_e
+    \end{equation*}
+    Ahora sí que vamos a considerar la energía de ligadura, el factor $Q$ de la reacción es 
+    \begin{equation*}
+        Q_\varepsilon=m(^A _Z X_N)+m_e-m({} ^{A} _{Z-1}Y_{N+1})-B\approx m(^A _Z X_N)-m({} ^{\ \ A} _{Z-1}Y_{N+1})
+    \end{equation*}
+    Como la energía de ligadrua del electrón y la masa del electrón son del mismo orden, tenemos que la diferencia $m_ec^2-B\sim \unit[1]{keV}$ y lo podemos despreciar.
+\end{itemize}
+\footnotetext{Como la masa atómica es la masa de los átomos neutros debemos quitar ese electrón ya que la masa de $^{A} _{Z+1} Y_{N-1}$ está ionizado ya que tiene $Z$ electrones.}
+\footnotetext{Al igual que antes tenemos que tener en cuenta la ionización de los átomos por lo que al tener este un protón menos que el núcleo padre tenemos que sumar la masa del nuevo electrón.}
+\newpage
+\subsection{Teoría de Fermi de la desintegración beta}
+
+Como la desintegración $\beta$ de un núcleo es un proceso débil, consideraremos que estos procesos están en el régimen perturbativo dependiente del tiempo.\\\\
+Partimos de un hamiltoniano $H_0$ responsable de los estados (quasi)\textbf{estacionarios}\footnote{Recordemos que los tiempos característicos de la interacción fuerte son del orden de $\unit[10^{-24}]{s}$ mientras que los de la interacción débil son superiores a $\unit[10^{-14}]{s}$ (Tabla \ref{tab: comparacion de escalas}) } nucleares y $H_1 =H_1(t)\equiv \alpha H_1$ con $\alpha \ll 1$ una perturbación dependiente del tiempo tal que $H=H_0+\alpha H_1$. \\\\ En un núcleo, la interacción dominante es la interacción fuerte, por lo que los estados iniciales, $\ket{\mathrm{i}}\equiv \chi_\mathrm{i}$ son propios del hamiltoniano de dicha interacción, por ser \textbf{estados ligados} presentan un espectro discreto. Las partículas ligeras producto de la desintegración las consideraremos \textbf{libres} por lo que tenemos \textbf{transiciones al continuo}.  Este tipo de transiciones vienen regidas por la regla de oro de Fermi (ecuación \ref{eq: regla de oro de fermi}) que tiene como expresión diferencial
+\begin{equation*}
+   \dd \lambda=\frac{2\pi}{\hbar} \abs{V_\mathrm{if}}^2 (4\pi)^2 \frac{\dd n_e \dd n_\nu}{\dd E_\mathrm{f}}
+\end{equation*}
+Los estados alcanzables \footnote{Como son partículas libres, el conjunto de estados alcanzable es una esfera de radio $p=\abs{\vec{p}}$ y tomando el diferencial de volumen $\dd V=4\pi p^2 \dd p$} por los leptones son
+\begin{equation*}
+    \left.\begin{aligned}
+        &\dd n_e =\frac{4\pi p^2V\dd p}{h^3}\\
+        &\dd n_{\Bar{\nu}} =\frac{4\pi q^2V\dd q}{h^3}
+    \end{aligned} \right\} \Rightarrow \frac{\dd n_e \dd n_{\Bar{\nu}}}{\dd E_\mathrm{f}} = V^2 \frac{(4\pi)^2 p^2 q^2}{h^6} \frac{\dd p \dd q}{\dd E_\mathrm{f}}
+\end{equation*}
+
+Donde $p$ es el momento del electrón y $q$ es el momento del antineutrino. El elemento de matriz es $$V_\mathrm{if}=\mel{\mathrm{f}}{H_1}{\mathrm{i}}=\int \psi_\mathrm{f}^* H_1 \phi_\mathrm{i} \dd^3 x=\int \qty[\chi_\mathrm{f} \varphi_e \varphi_{\Bar{\nu}}]^* H_1 \chi_\mathrm{i} \dd^3 x=G_\mathrm{F} \int \qty[\chi_\mathrm{f} \varphi_e \varphi_{\Bar{\nu}}]^* \mathcal{O}_\mathrm{Ad} \chi_\mathrm{i} \dd^3 x =G_\mathrm{F} M_\mathrm{if}$$ 
+Donde $G_\mathrm{F}$ es la constante de Fermi (ecuación \ref{eq: constante de Fermi}) y nos da la intensidad de la interacción y contiene las constantes que dimensionan el operador $H_1=g\mathcal{O}_\mathrm{Ad}$.
+Como los leptones del estado final se mueven como partículas libres después de la interacción  sus funciones de onda son 
+\begin{equation*}
+        \varphi_e(\vec{r})=\frac{1}{\sqrt{V}} \exp{i\frac{\vec{p}\cdot \vec{r}}{\hbar}}\quad \quad \varphi_\nu(\vec{r})=\frac{1}{\sqrt{V}} \exp{i\frac{\vec{q}\cdot \vec{r}}{\hbar}}
+\end{equation*}
+
+Las energías cinéticas típicas para el electrón son de $T_e=\unit[1]{MeV}$ por lo que $$T_e=\sqrt{m_e^2c4+p^2c^2}-m_ec^2 \Rightarrow \sqrt{\qty(T_e+m_ec^2)^2-m_e^2c^4}=pc= \unit[1.4]{MeV}$$ Con lo que el cociente $\dfrac{p}{\hbar}=\unit[0.007]{fm^{-1}} \Rightarrow \vec{p}\cdot \vec{r} \ll 1$ y esto nos permite desarrollar en serie las funciones de onda.
+\newpage
+\begin{equation*}
+    \begin{aligned}
+        &\varphi_e=\frac{1}{\sqrt{V}} \exp{i\frac{\vec{p}\cdot \vec{r}}{\hbar}}=\frac{1}{\sqrt{V}}\qty[1+i\frac{\vec{p}\cdot \vec{r}}{\hbar}+\cdots]\\
+        &\varphi_{\Bar{\nu}}=\frac{1}{\sqrt{V}} \exp{i\frac{\vec{q}\cdot \vec{r}}{\hbar}}=\frac{1}{\sqrt{V}}\qty[1+i\frac{\vec{q}\cdot \vec{r}}{\hbar}+\cdots]
+    \end{aligned}
+\end{equation*}
+Si nos quedamos a primer orden tenemos que las funciones de onda son $\varphi_\ell\approx \dfrac{1}{\sqrt{V}}$ y a esta aproximación se le denomina \textbf{aproximación permitida} y a las transiciones que se dan en esta aproximación las llamaremos \textbf{transiciones permitidas}. A las transiciones posibles que se dan para términos superiores de la serie se les conoce como \textbf{transiciones prohibidas} y son mucho menos probables que las permitidas.
+De la ecuación \ref{eq: desarrollo en armonicos esfericos exponencial imaginaria} vemos que cada uno de los términos de la exponencial corresponde a un armónico esférico, ésto nos dará los estados de momento angular con el que salen los leptones.\\\\
+En la aproximación permitida la probabilidad diferencial viene dada por 
+\begin{equation*}
+    \dd \lambda= \frac{2\pi }{\hbar} G_\mathrm{F}^2 \abs{M_\mathrm{if}}^2 \frac{(4\pi)^2 p^2 q^2}{h^6} \dd p \dv{q}{E_\mathrm{f}}
+\end{equation*}
+Donde $M_\mathrm{if}=\displaystyle \int \chi_\mathrm{f}^* \mathcal{O}_\mathrm{Ad} \chi_\mathrm{i} \dd^3x$ se conoce como \textbf{elemento de matriz nuclear}. La energía del estado final viene dada por $E_\mathrm{f}=E_e+E_{\Bar{\nu}}=E_e+qc$ (despreciamos la masa del neutrino) por lo que $\displaystyle \dv{q}
+{E_\mathrm{f}}=\dfrac{1}{c}$. La distribución del momento del electrón la podemos escribir como
+\begin{equation}
+    N(p)\dd p=C p^2 q^2 \dd p
+    \label{eq: densidad de estados electron desintegracion beta}
+\end{equation}
+\noindent
+\begin{minipage}{0.6\textwidth}
+Por otro lado $Q=E_\mathrm{f}=T_e+qc $ y el momento es $$ q=\dfrac{Q-T_e}{c}=\dfrac{Q-\sqrt{m^2c^4+p^2c^2}+mc^2}{c}$$ por lo que la distribución de momento es
+\begin{equation}
+    N(p)=\frac{C}{c} p^2 \qty[Q-\sqrt{m^2c^4+p^2c^2}+mc^2]^2
+    \label{eq: densidad de estados de momento electron desintegracion beta}
+\end{equation}
+Esta distribución se anula cuando $p=0$ y $Q=T_e$.\\\\
+Podemos escribir la ecuación \ref{eq: densidad de estados electron desintegracion beta} en términos de la energía cinética del electrón a través de 
+\begin{equation*}
+    p\dd p=\frac{1}{c^2} \qty(T_e+m_ec^2)\dd T_e
+\end{equation*}
+
+Obteniendo
+\begin{equation}
+    N(T_{e})=\frac{C}{c^5}(T_{e}^2+2T_{e}m_{e}c^2)^{1/2}(Q-T_{e})^2(T_{e}+m_{e}c^2)
+    \label{eq: densidad de estados de energia cinetica electron desintegracion beta}
+\end{equation}
+Esta distribución se hace nula cuando $T_e=0$ y $T_e=Q$.
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Diagramas Tema 4/Distribucion de estados beta.pdf}
+    \captionof{figure}{Distribución de la energía y el momento del electrón. La superior corresponde a la ecuación \ref{eq: densidad de estados de momento electron desintegracion beta} mientras que la inferior corresponde a  \ref{eq: densidad de estados de energia cinetica electron desintegracion beta}.}
+\end{minipage}
+\newpage
+
+Podríamos suponer que la desintegración $\beta^-$ y la $\beta^+$ tienen el mismo espectro debido a que las masas en los estados inicial y final de la desintegración son la misma. \\\\
+En la figura \ref{fig:momentos y energia cineticas de positrones y electrones} representamos los espectros de momento y energía de la desintegración $\beta^\pm$. Con lo que la suposición de que el espectro es el mismo para electrones y positrones no es correcta.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Tema 4/Distribuciones de momento de positrones y electrones.pdf}
+    \caption{Espectros de energía cinética y momento de electrones y positrones en la desintegración del $^{64}\mathrm{Cu}$ (calculados con la función de Fermi no relativista, en unidades arbitrarias normalizadas al máximo de cada panel). Si vemos la distribución de energía cinética, vemos que los electrones cuando se emiten se encuentran atraídos por el núcleo por lo que su energía cinética es muy baja; por otro lado los poistrones son repelidos por el núcleo por ello no encontramos positrones sin energía cinética y son muy pocos con energía baja.}
+    \label{fig:momentos y energia cineticas de positrones y electrones}
+\end{figure}
+
+Por último nos queda determinar la forma que tiene el operador que nos provoca la transición, este operador se determinó de manera fenomenológica y fue gracias a la no conservación de la paridad de la interacción débil cuando se determinó que tenía que ser una combinación de un operador vectorial y un operador axial, así
+\begin{equation}
+    H_1=G_\mathrm{F}\mathcal{O}_\mathrm{Ad}=G_\mathrm{F} \sum_{j=1}^A \qty(\tau_\mp (j)+g_A \sigma(j) \tau_\mp(j)) \quad \text{ con } \quad g_A=\frac{G_V}{G_A}
+    \label{eq: operador desintegracion beta}
+\end{equation}
+
+Donde $\tau_\mp$ son los operadores escalera de isospín y $\sigma$ es el operador de spin. Si analizamos el operador del decaimiento $\beta$ diferenciamos dos términos y dos tipos de decaimientos:
+\begin{itemize}
+    \item \textbf{Decaimiento tipo Fermi}: Asociado al primer término, tiene carácter vectorial, por estar formado por un operador escalera de isospín nos da el intercambio entre $(n\leftrightarrow p)$; describe transiciones con $\vec{S}=\vec{S}_e+\vec{S}_{\Bar{\nu}}=0 \xrightarrow[]{} S_0=S_\mathrm{f}$
+    \item \textbf{Decaimiento tipo Gamow-Teller}: Asociado al segundo termino, tiene carácter axial y está formado por un operador de spin y otro de escalera de isospín, las transiciones descritas para la parte de spin $\vec{S}=\vec{S}_e+\vec{S}_{\Bar{\nu}}=1 \xrightarrow[]{} S_0=S_\mathrm{f}=\pm 1$.
+\end{itemize}
+
+A modo de resumen, podemos decir que el espectro de energías de la desintegración $\beta$ tiene tres contribuciones:
+\begin{itemize}
+    \item \textbf{Interacción Coulombiana}: Debido a la diferencia de cargas entre el electrón y el positrón la influencia ejercida por el núcleo hijo sobre el leptón cargado nos modifica la distribución, ésta interacción viene dada por la \textbf{función de Fermi} $F(Z,p)\equiv F(Z,T_e)$.
+    \item \textbf{Factor estadístico} $p^2(Q-T_e)^2$: Nos modifica el final de la distribución, si consideramos la masa del neutrino tiene la forma $p^2\sqrt{(Q-T_e)^2-m^2_\nu c^4}(Q-T_e)$.
+    \item \textbf{Elemento de matriz nuclear}: Como al introducir las funciones de onda leptónicas hemos hecho dos aproximaciones, la primera suponiendo que es onda plana y la segunda del desarrollo en serie, podemos redefinir el elemento de matriz $M_\mathrm{if}\equiv M_\mathrm{if} S(p,q)$, al elemento $M_\mathrm{if}$ le asignaremos la parte correspondiente a las funciones de onda de los núcleos padre e hijos mientras que al factor de forma $S(p,q)$ le asignaremos las contribuciones de los momentos del electrón y del antineutrino de las transiciones prohibidas.
+\end{itemize}
+
+Por lo que finalmente tenemos que la distribución de energías será:
+
+\begin{equation}
+    N(p)= \frac{G_\mathrm{F}^2}{2\pi^3c^3\hbar^7} \left(Q-T_e\right)p^2 F(Z,p)\left[M_\mathrm{if}|^2S(p,q)\right]
+    \label{eq: densidad de energía total}
+\end{equation}
+\subsection{Forma de los espectros de la desintegración beta. Plot de Kurie}
+\noindent
+\begin{minipage}{0.6\textwidth}
+
+    En la aproximación permitida tenemos que el elemento de matriz es constante (no hay factor de forma) por lo tanto $$Q-T_e\propto \displaystyle \sqrt{\frac{N(p)}{p^2F(Z,p)}}=f(T_e)$$ Si la aproximación es correcta, podemos representar $f(T_e)$ y obtendremos una recta que corta el eje de abcisas en  $T_e\eval_\mathrm{max}$. En caso de no serlo, el diagrama no será lineal, sino que estará curvado y habrá que introducir el factor de forma.\\\\
+    Vemos que a bajas energías la aproximación no es correcta, esto se debe al scattering producido entre el núcleo y el electrón, pero se puede corregir con el factor de forma.
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+     \centering
+     \includegraphics[width=\textwidth]{Diagramas Tema 4/Plot De Kurie.pdf}
+     \captionof{figure}{Plot de Kurie de una transición permitida (esquema ilustrativo para el $^{66}\mathrm{Ga}$).}
+     \label{fig: plot de kurie}
+\end{minipage}
+\newpage
+\subsection{Vida media comparativa}
+\noindent
+\begin{minipage}{0.6\textwidth}
+    Si integramos probabilidad diferencial en todo el espectro de energías obtenemos
+\begin{equation*}
+    \lambda= \int^{p_\mathrm{max}}_0 \dv{\lambda}{p} \dd p= \frac{G_\mathrm{F}^2 \abs{M_\mathrm{if}}^2}{2\pi^3 c^3 \hbar^7} \int^{p_\mathrm{max}}_0 F(Z,p) p^2 (Q-T_e)^2 \dd p
+\end{equation*}
+Podemos definir la integral de Fermi como 
+\begin{equation*}
+    f(Z,Q))\frac{1}{m_e^5c^7} \int^{p_\mathrm{max}}_0 F(Z,p)p^2(Q-T_e)^2\dd p
+\end{equation*}
+que es una integral tabulada, por lo que podemos escribir la probabilidad de desintegración como 
+\begin{equation}
+    \lambda=k G_\mathrm{F}^2 \abs{M_\mathrm{if}}^2 f(Z,Q) \quad \text{ con } \quad k=\frac{m_e^5 c^4}{2\pi^3\hbar^7}
+    \label{eq: probabilidad de desintegración beta}
+\end{equation}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagramas Tema 4/Semivida comparativa.pdf}
+    \captionof{figure}{Representación de la semivida comparativa, vemos que abarca 20 órdenes de magnitud, desde $\unit[10^3]{s}$ hasta $\unit[10^{22}]{s}$.}
+\end{minipage}\\\\
+
+Definimos la \textbf{semivida comparativa} como
+\begin{equation}
+    ft=f(Z,Q)t_\mathrm{\nicefrac{1}{2}}=\frac{\log 2}{k G_\mathrm{F}^2 \abs{M_\mathrm{if}}^2}
+    \label{eq: semivida comparativa}
+\end{equation}
+
+Que depende únicamente del elemento de matriz nuclear, por lo que nos proporciona información acerca de la estructura nuclear y nos permite comparar desintegraciones débiles de distintos núcleos. Debido a que la semivida comparativa tiene una variación tan grande, habitualmente utilizamos su logaritmo en base 10 para estudiar las reacciones, por lo que $\log_{10}(ft)\in [3,22]$.
+\subsubsection{Transiciones superpermitidas}
+ Definimos las \textbf{transiciones superpermitidas} como aquellas transiciones que tienen una semivida comparativa muy baja $\log_{10}(ft)\sim 3-4$ y se caraceterizan por ser transiciones del tipo $0^+\xrightarrow[]{} 0^+$. Que las transiciones superpermitidas tengan semividas muy bajas quiere decir que son las más probables pues recordemos que $\lambda \sim \nicefrac{1}{t_{\nicefrac{1}{2}}}$.\\\\
+De la ecuación \ref{eq: semivida comparativa} vemos que a medida que el elemento de matriz va disminuyendo, ésta va aumentando lo que nos quiere decir que en las transiciones superpermitidas, las funciones de onda nucleares de los núcleos padre e hijo son muy parecidas, concretamente para estas transiciones el elemento de matriz nuclear toma por valor $\abs{M_\mathrm{if}}=\sqrt{2}$. \\\\
+Podemos determinar la constante de Fermi $G_\mathrm{F}$ a partir de la ecuación \ref{eq: semivida comparativa} pues la semivida comparativa es medible, obteniendo que $G_\mathrm{F}=\unit[0.88\cdot 10^{-4}]{Mev fm^{3}}$, el cual no coincide con el que calculamos en la ecuación \ref{eq: constante de Fermi} ya que lo que en realidad hemos calculado es la constante asociada al vértice $ud$ de una desintegración débil, por lo que hemos calculado $G_\mathrm{F}\cos(\theta_\mathrm{c})$.
+
+\subsection{Reglas de selección. Momento angular y paridad}
+La desintegración beta (independientemente del tipo que sea) sigue la siguiente reacción
+\begin{equation*}
+      ^A _Z X_N \longrightarrow {}^{A} _{Z\pm1} Y_{N\mp1}+e^\mp+\Bar{\nu}_e/\nu_e
+\end{equation*}
+
+Hemos dicho que a través de la ecuación \ref{eq: desarrollo en armonicos esfericos exponencial imaginaria} podemos asociar un armónico esférico a las diferentes transiciones, por ello tenemos que las transiciones permitidas tienen ($L=0$) y las prohibidas tienen ($L>0$)\footnote{Cada unidad extra de $L$ reduce la probabilidad de transición en un factor $10^3-10^4$. \label{footnote: probabilidad momento angular}}. Si aplicamos la conservación de momento angular, obtenemos
+\begin{equation}
+    \vec{J}_\mathrm{i}(X)= \vec{J}_\mathrm{f}(Y)+\vec{L}(e-\nu)+\vec{S}(e-\nu)
+    \label{eq: conservacion momento angular desintegracion beta}
+\end{equation}
+
+En la aproximación permitida, $L=0$, pero los leptones por tener spin $S_\ell=\dfrac{1}{2}\hbar$ pueden contribuir a cambiar el momento momento angular del núcleo hijo dependiendo de si los spines son paralelos $\qty(\abs{\vec{S}}=\hbar)$ o antiparalelos $\qty(\abs{\vec{S}}=0)$.
+\subsubsection{Paridad}
+La interacción entre núcleos contiene una parte debido a la interacción fuerte y otra debido a la interacción débil. Los efectos de la interacción débil en la espectroscopía (violación de paridad) son muy pequeños ($10^{-7}$) comparados con el efecto de la interacción fuerte. Dicho efecto consiste en añadir a la función de onda nuclear una pequeña componente de la paridad contraria. En la inmensa mayoría de los casos esta violación no tiene consecuencias para la espectroscopía por lo tanto se puede asumir que la paridad se conserva con lo que el cambio de paridad nuclear viene determinado entonces por el momento angular orbital de los leptones
+\begin{equation*}
+    P_\mathrm{i}(X)=P_\mathrm{f}(Y)(-)^L
+\end{equation*}
+
+\subsubsection{Isospín}
+Como la desintegración beta es un proceso débil, podríamos suponer que el isospín no es un buen número cuántico para estudiar estos procesos. Sin embargo, para las transiciones permitidas, sí que debemos considerarlo pues al ser un cambio de $n\leftrightarrow p$, el operador \ref{eq: operador desintegracion beta} ($\mathcal{O}_\mathrm{Ad}=\sum \tau_\mp$) y como las funciones de onda de los núcleos padre e hijo son muy parecidas en estas transiciones, debemos tener en cuenta el isospín.
+\subsubsection{Reglas de selección}
+Vamos a detallar los incrementos de números cuánticos de las transiciones permitidas y prohibidas, cada una de ellas tendrán asociadas una desintegración tipo \textbf{Fermi} y otras \textbf{Gamow-Teller}.
+\begin{itemize}
+    \item \textbf{Transiciones Permitidas}: No tienen momento angular orbital asociado ($L=0  \quad \Delta P=\mathrm{no}$).
+    \begin{itemize}
+        \item Fermi: $\Delta J=0, \quad \Delta I_z=\pm1, \quad \Delta P=\mathrm{no}$ 
+        \item Gamow-Teller: $\Delta J=0,\pm 1 \quad \Delta I_z=\pm1$ En este caso los procesos $0^+\xrightarrow[]{}0^+$ están prohibidos ya que sólo pueden ser de tipo Fermi.
+    \end{itemize}
+    \item \textbf{Transiciones Prohibidas primeras}: Tienen momento angular orbital ($L=1  \quad \Delta P=\mathrm{si}$).
+    \begin{itemize}
+        \item Fermi: $\Delta J=0,\pm 1$ (salvo losprocesos $0\xrightarrow[]{}0$)
+        \item Gamow-Teller: $\Delta J=0,\pm1, \pm 2 $.
+    \end{itemize}
+    \item \textbf{Transiciones Prohibidas segundas}: Tienen momento angular orbital ($L=2  \quad \Delta P=\mathrm{no}$).
+    \begin{itemize}
+        \item Fermi: $\Delta J=\pm 2$
+        \item Gamow-Teller: $\Delta J=\cancel{0,\pm1},\pm2,\pm3 $ ya que la contribución principal está en las transiciones permitidas $^{\ref{footnote: probabilidad momento angular}}$.
+    \end{itemize}
+        \item \textbf{Transiciones Prohibidas terceras}: Tienen momento angular orbital ($L=3  \quad \Delta P=\mathrm{si}$).
+    \begin{itemize}
+        \item Fermi: $\Delta J=\pm 3$
+        \item Gamow-Teller: $\Delta J=\cancel{0,\pm1, \pm 2},\pm3,\pm4 $ ya que la contribución principal está en las transiciones prohibidas primeras.
+    \end{itemize}
+    \item \textbf{Transiciones Prohibidas cuartas}: Tienen momento angular orbital ($L=4  \quad \Delta P=\mathrm{no}$).
+    \begin{itemize}
+        \item Fermi: $\Delta J=\pm 3$
+        \item Gamow-Teller: $\Delta J=\cancel{0,\pm1, \pm 2,\pm3},\pm4,\pm5 $ ya que la contribución principal está en las transiciones prohibidas segundas y en las permitidas.
+    \end{itemize}
+     Sólo se conoce un caso y es el $$\mathrm{In}\qty({\frac{9}{2}}^+)\longrightarrow \mathrm{Sn}\qty({\frac{1}{2}}^+)$$
+\end{itemize}
+\section{Desintegración alfa. Modelo de Gamow}
+Los procesos de desintegración $\alpha$ siguen la reacción 
+\begin{equation*}
+        ^A _Z X_N \longrightarrow {}^{A-4} _{Z-2} Y_{N-2}+\alpha
+\end{equation*}
+
+Originalmente se identifica como la radiación natural menos penetrante. Fue descubierta por Rutherford en 1903 mientras estudiaba la emisión radiactiva del radio en presencia de campos eléctricos y magnéticos; fue en 1909 cuando determinó que las partículas que formaban dicha radiación eran núcleos de Helio-4.\\\\ Los procesos $\alpha$ se caracterizan por ser desintegraciones a dos cuerpos, por lo que las partículas $\alpha$ \textbf{siempre} tienen la misma energía para una misma transición de estados, por otro lado por ser partículas cargadas las hace más fáciles de estudiar.\\\\
+La emisión $\alpha$ es un efecto consecuencia de la repulsión coulombiana debido a que esta crece como $Z^2$ (ecuación \ref{eq: formulas semiempirica de masas}), será el tipo de desintegración predominante para \textbf{núcleos pesados}, concretamente se limita principalmente a núcleos con $A>170$. Por último cabe preguntarnos si es posible emitir otro tipo de núcleos en una desintegración, la respuesta nos viene dada por el factor $Q$ de la reacción, pues recordemos que sólo se pueden producir desintegraciones con $Q>0$, en la siguiente tabla se recogen las energías emitidas por distintas partículas para el $^{232}\mathrm{U}$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Partícula&$n$ & $^1\mathrm{H}$ & $^2\mathrm{H}$ & $^3\mathrm{H}$ & $^3\mathrm{He}$ & $^4\mathrm{He}$ & $^5\mathrm{He}$ & $^6\mathrm{He}$ & $^6\mathrm{Li}$ & $^8\mathrm{Be}$ \\
+\hline
+Energía &$-7.26$ & $-6.12$ & $-10.70$ & $-10.24$ & $-9.92$ & $\textcolor{red}{5.41}$ & $-2.59$ & $-6.19$ & $-3.79$ & $\textcolor{red}{10.8}$ \\
+\hline
+\end{tabular}
+\caption{Energía emitida [MeV] ($Q$) por distintos canales de emisión del $^{232}\mathrm{U}$ calculada a través de la fórmula semiempírica de masas.}
+\label{tab: energia emitida desintegracion alfa}
+\end{table}
+
+Estos resultados son extensibles al resto de elementos, debido a la alta energía de ligadura de la partícula $\alpha, B_\alpha=\unit[28,296]{MeV}$ \textbf{no existe} una partícula más ligera que cumpla las condiciones de energía\footnote{En los procesos de fisión normalmente se liberan neutrones de los productos pero eso se debe a las deformidades del núcleo y contribuciones de asimetría y no a las repulsiones coulombianas.}, por último vemos en la tabla \ref{tab: energia emitida desintegracion alfa} que hay un núcleo más pesado que sí que es posible emitir, pero veremos que la emisión de núcleos pesados es muy improbable.
+\subsubsection{Balance energético}
+La energía liberada durante la reacción es $$Q=\qty(m(^A _ZX)- m(^{A-4} _{Z-2}Y_{N-2})-m(\alpha))c^2=T_Y+T_\alpha$$ Si nos situamos en el sistema CM tenemos que $$\abs{p_\alpha}=\abs{p_Y}$$ Las energías típicas en los procesos $\alpha$ están entorno a  $\unit[5]{MeV}$, por lo que el proceso es \textbf{no relativista} $T\ll mc^2$. Podemos escribir entonces la energía cinética de las partículas como
+\begin{equation}
+    T_\alpha=\frac{Q}{(1+m_\alpha/m_{Y})}\approx Q\qty(1-\frac{4}{A})\quad \quad  T_Y=\frac{Q}{(1+m_Y/m_{\alpha})}\approx Q\frac{4}{A}
+    \label{eq: energias cineticas desintegracion alfa}
+\end{equation}
+
+Donde hemos utilizado la aproximación $\nicefrac{4}{A-4}\approx \nicefrac{4}{A}$ para $A\gg 4$ y que la masa de los nucleones para núcleos pesados es más o menos constante. \\\\En este caso la partícula $\alpha$ se lleva la mayor parte de la energía cinética $\sim 98\%$; por otro lado las energías del núcleo son del orden de $\unit[100]{keV}$, que es mucho mayor que la energía de disociación de los átomos en un sólido $\sim \unit[10]{eV}$, por lo que los núcleos se pueden liberar de la celda en la que se encuentran, pero debido a la baja capacidad de penetración no se liberan al ambiente.
+\subsection{Sistemática del decaimiento alfa. Regla de Geiger-Nuttall} 
+
+Geiger y Nuttall observaron en 1911, mientras estudiaban el alcance de las partículas $\alpha$ en series naturales, que los emisores $\alpha$ con $Q$ elevado presentan vidas de media cortas y viceversa
+
+\begin{equation}
+    \begin{aligned}
+    &^{232}\mathrm{Th}\quad Q_{\alpha}=\unit[4.08]{MeV}\quad t_{\nicefrac{1}{2}}=\unit[1.4\cdot^{10}]{year}\\
+    &^{218}\mathrm{Th}\quad Q_{\alpha}=\unit[9.85]{MeV}\quad t_{\nicefrac{1}{2}}=\unit[1\cdot10^{-7}]{s}
+\end{aligned}
+\label{eq: desintegraciones de dos isotopos de th}
+\end{equation}
+
+Es decir, un factor 2 en la energía de las partículas $\alpha$ produce un factor $10^{24}$ en la semivida. Si representamos $\log_{10}(t_{\nicefrac{1}{2}})$ respecto a $Q$ vemos que hay una relación bien definida para los núcleos par-par como se ve en la figura \ref{fig: semivida vs Q alfa}
+\begin{figure}[h]
+    \centering
+    % Primera subfigura
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Diagramas Tema 4/Semivida vs Q.pdf}
+        \caption{Representación $\log_{10}(t_{\nicefrac{1}{2}})$ vs $Q$ de las desintegraciones $\alpha$ de núcleos par-par, calculada con el modelo de Gamow para distintos elementos.}
+        \label{fig: semivida vs Q alfa}
+    \end{subfigure}
+    \hfill
+    % Segunda subfigura
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Diagramas Tema 4/Q vs A Geiger Nuttall.pdf}
+        \caption{Valor $Q$ de varias cadenas isotópicas de núcleos pesados (valores de tablas de masas).}
+        \label{fig: Q vs A geiger nuttall}
+    \end{subfigure}
+    \caption{Reglas de Geiger-Nuttall.}
+    \label{fig: Reglas de geiger nuttall}
+\end{figure}
+
+
+La razón por la que sólo representamos los núcleos par-par se debe a que existe una importante dispersión si consideramos todos los núcleos. Otro comportamiento similar ocurre con los núcleos impar-impar aunque no es tan suave como el mostrado en la figura \ref{fig: semivida vs Q alfa}.\\\\
+Otra relación sistemática (figura \ref{fig: Q vs A geiger nuttall})se da para núcleos con $A>212$, se observa que al aumentar $N$ para un $Z$ fijo se reduce el valor $Q$ de la reacción. Se observa una discontinuidad en $N=126$, lo que evidencia la estructura de capas nuclear.\\\\
+\noindent
+\begin{minipage}{0.6\textwidth}
+    Utilizando la fórmula semiempírica de masas obtenemos $$\begin{aligned}
+    &Q=B(\alpha)+B({}^{A-4} _{Z-2} Y_{N-2})-B( ^A _Z X_N)\approx \unit[28.3]{MeV} -\\&-4a_\mathrm{V}+\frac{8}{3}a_\mathrm{S}A^{-1/3}+4a_\mathrm{C}\frac{Z}{A^{1/3}}-4a_\mathrm{sym} \qty(1-\frac{2Z}{A})^2+24A^{-3/2}
+\end{aligned}$$
+
+Que si comparamos con los valores de las desintegraciones del torio (tabla \ref{tab: desintegraciones torio})
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+\begin{tabular}{|ccc|}
+\hline
+Isótopo             & $Q_\mathrm{teo}$ & $Q_\mathrm{exp}$ \\
+\hline\hline
+$^{220}\mathrm{Th}$ & 7.24                         & 8.95                         \\
+$^{232}\mathrm{Th}$ & 5.14                         & 4.08   \\             \hline
+\end{tabular}
+\captionof{table}{Energías liberadas (MeV) por la desintegración $\alpha$ del $^{220}\mathrm{Th}$ y $^{232}\mathrm{Th}$.}
+\label{tab: desintegraciones torio}
+\end{minipage}
+\\\\
+Vemos que el signo de la energía es correcto y que es un valor razonable, pues apenas distan una unidad, además la fórmula semiempírica de masas predice el decrecimiento del valor $Q$ pero experimentalmente sabemos que decrece de forma más rápida que la predicha.
+\newpage
+\noindent
+\begin{minipage}{0.6\textwidth}
+\subsection{Teoría de la desintegración alfa}
+    La teoría de la emisión $\alpha$ fue desarrollada en 1928 por Gamow y por Condon y Gourney independientemente.\\\\
+    Este modelo es un modelo de \textbf{un cuerpo} en el que se supone que la partícula $\alpha$ se ``preforma'' en el núcleo padre y después es emitida; la partícula se mueve en una \textbf{pozo esférico} de radio $a=R_0A^{1/3}$ y profundiadad $-V_0$ que viene determinado por el núcleo hijo.\\\\
+    La emisión tiene lugar por \textbf{efecto tunel} a través de la barrera coulombiana que es $V(r)=\dfrac{ zZ^\prime \alpha \hbar c}{r} $ siendo $Z^\prime$ la carga del núcleo hijo.\\\\
+    Si nos fijamos en la figura \ref{fig: potencial de barrera emision alfa} vemos que la barrera tiene un máximo que se corresponde con $B=V(a)$, esta altura máxima corresponde con la energía de ligadura del núcleo.
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Diagramas Tema 4/PotencialdeBarreraemisionalfa.pdf}
+    \captionof{figure}{Potencial de barrera propuesto por Gamow. En la región resaltada en gris es donde se encuentra la partícula $\alpha$.}
+    \label{fig: potencial de barrera emision alfa}
+\end{minipage}
+\\\\
+La línea $Q$ no da la energía de la reacción y por lo tanto la energía cinética de la partícula $\alpha$.
+Por estar en un problema de un cuerpo, la constante de desintegración de la reacción será $$\lambda=fP$$ siendo $f$ la frecuencia con la que choca la partícula contra las paredes del pozo.\\\\
+Para hacer un estudio de los órdenes de magnitud de este potencial, vamos a calcular la probabilidad de transición de una barrera de altura $\dfrac{1}{2}(B-Q)$ y anchura $\dfrac{1}{2}(b-a)$ (zona roja de la figura \ref{fig: potencial de barrera emision alfa}) que vemos que se acopla bastante bien a la barrera del modelo. Si recordamos el coeficiente de transmisión exacto que tiene una barrera de potencial para estados de resonancia es
+\begin{equation}
+    T=\dfrac{1}{1+\dfrac{1}{4}\dfrac{V_0^2}{E(V_0-E)}\sinh^2k_2w}
+    \label{eq: coeficiente de transmision}
+\end{equation}
+
+Siendo $w$ la anchura del pozo y $\hbar k_2=\sqrt{2m(E-V_0)}$, que en este caso, $\hbar k_2=\sqrt{m(B-Q)}$. Si suponemos un caso típico como es la desintegración alfa del torio $Z=90, \ a=\unit[7.5]{fm},\\  B=\unit[34]{MeV},\  k_2=\unit[1.6]{fm^{-1}} \ \text{y} \ Q=\unit[6]{MeV}$, por último $b$ es el punto en el que la partícula sale del potencial, es decir, $V(b)=Q$ por lo tanto $$b=\frac{zZ^\prime\alpha \hbar c}{Q}\xrightarrow[]{\text{Des }\alpha}\unit[42]{fm}$$
+
+Por lo tanto $k_2\nicefrac{1}{2}(b-a)\gg 1$ y podemos aproximar la ecuación \ref{eq: coeficiente de transmision} como $$P=\abs{T}^2\approxeq \exp{-k_2(b-a)}$$
+
+Obteniendo finalmente $$P\sim 2\cdot 10^{-25} \quad \lambda \sim \unit[10^{-3}]{s^{-1}} \quad t_{\nicefrac{1}{2}}\sim \unit[700]{s}$$
+
+El cálculo exacto de la barrera lo podemos hacer a través de una expansión en serie del potencial de Coulomb en barreras de altura $V(r)$ y anchura $\dd r$\footnote{Es similar a realizar el cálculo de una integral definida utilizando la integral de Riemann.}, obteinendo que la probabilidad de penetrar cada barrera infinitesimal es
+\begin{equation}
+    \dd P=\exp{-2 \dd r \sqrt{\frac{2m}{\hbar^2}(V(r)-Q)}} \Rightarrow P= \exp{-2G}
+    \label{eq: probabilidad de transicion barrera de coulomb}
+\end{equation}
+Siendo $G$ lo que se cono como \textbf{factor de Gamow}
+\begin{equation*}
+    G=\sqrt{\frac{2m}{\hbar}} \int ^b _a \sqrt{V(r)-Q} \dd r
+\end{equation*}
+
+Que si lo evaluamos obtenemos
+\begin{equation}
+    G=zZ^\prime \alpha \sqrt{\frac{2mc^2}{Q}}\qty[\arccos{\sqrt{\frac{Q}{B}}}-\sqrt{\frac{Q}{B}\qty(1-\frac{Q}{B})}]\xrightarrow[]{\nicefrac{Q}{B}\ll 1} zZ^\prime \alpha \sqrt{\frac{2mc^2}{Q}}\qty(\frac{\pi}{2}-2\sqrt{\frac{Q}{B}})
+    \label{eq: factor de Gamow}
+\end{equation}
+
+Por último la frecuencia la podemos estimar a través de $f=\dfrac{v_\alpha}{2a}\approx \dfrac{c \sqrt{2T_\alpha/m_\alpha c^2}}{2a}$ obteniendo finalmente que la constante de desintegración es 
+\begin{equation}
+    \lambda= f P= f\exp{-2zZ^\prime \alpha \sqrt{\frac{2mc^2}{Q}}\qty(\frac{\pi}{2}-2\sqrt{\frac{Q}{B}})}=\frac{\log 2}{t_{\nicefrac{1}{2}}} 
+    \label{eq: anchura de desintegracion emision de nucleos analitica}
+\end{equation}
+
+Por lo que podemos calcular las vidas medisa en función de $A$ y $Q$.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|cccc|}
+\hline
+$A$ & $Q$ (MeV) & $t^\mathrm{Medido}_{\nicefrac{1}{2}}$  & $t^\mathrm{Calculado}_{\nicefrac{1}{2}}$  \\ 
+\hline \hline
+220 & 8.95 & $10^{-5}$ & $3.3 \cdot 10^{-7}$ \\
+222 & 8.13 & $2.8 \cdot 10^{-3}$ & $6.3 \cdot 10^{-5}$ \\
+224 & 7.31 & $1.04$ & $3.3 \cdot 10^{-2}$ \\
+226 & 6.45 & $1.85 \cdot 10^{3}$ & $6.0 \cdot 10^{1}$ \\
+228 & 5.52 & $6.0 \cdot 10^{7}$ & $2.4 \cdot 10^{6}$ \\
+230 & 4.77 & $2.5 \cdot 10^{12}$ & $1.0 \cdot 10^{11}$ \\
+232 & 4.08 & $4.4 \cdot 10^{17}$ & $2.6 \cdot 10^{16}$ \\
+\hline
+\end{tabular}
+\caption{Vidas medias calculadas para desintegracines $\alpha$ de distintos isótpos de torio.}
+\label{tab: desintegraciones del torio}
+\end{table}
+
+Vemos que existe una diferencia de 1-2 órdenes de magnitud en un rango de 20 órdenes, por ello introducimos el factor de preformación $p_\alpha\approxeq 0.1$ que no es más un parámetro que ajustamos para que nos coincidan los órdenes, lo podemos interpretar como \textit{la probabilidad de que la partícula alfa se forme dentro del núcleo}, ya que si no esta formada no se puede emitir.
+\newpage
+\subsubsection{Comentario}
+Aunque el modelo de Gamow es muy simple, pues hemos cambiado un problema de $N$ cuerpos a uno de 1 cuerpo y no hemos tenido en cuenta para nada las funciones de onda nucleares (y por ende la regla de oro de Fermi), reproduce muy bien las medidas experimentales sobretodo para los núcleos par-par.
+\subsection{Emisión de otras partículas pesadas}
+Los cáclulos realizados en sección anterior nos permiten interpretar la posibilidad de tener otros tipos de desintegraciones para $z\neq 2$, supongamos que tenemos dos posibles emisiones en la desintegración del $^{220}_{90} \mathrm{Th}$
+\begin{equation*}
+\begin{aligned}
+{}^{220}_{90}\text{Th} &\to {}^{208}_{84}\text{Po} + {}^{12}_{6}\text{C} 
+\quad Q = 32.1 \, \text{MeV} \quad T_{\nicefrac{1}{2}}^{\text{teo}} = 2.3 \cdot 10^6 \, \text{s} \\
+{}^{220}_{90}\text{Th} &\to {}^{216}_{88}\text{Ra} + \alpha 
+\quad \ \, \; Q = 8.95 \, \text{MeV} \quad T_{\nicefrac{1}{2}}^{\text{teo}} = 3.3 \cdot 10^{-7} \, \text{s}
+\end{aligned}
+\end{equation*}
+
+Como vemos la emisión de núcleos de $^{12}\mathrm{C}$ tendría una vida media 13 ordenes de magnitud superior, por lo que aunque son posibles, no son facilmente observables. Sí que se ha observado
+\begin{equation*}
+\begin{aligned}
+{}^{223}_{88}\text{Ra} &\to {}^{209}_{82}\text{Pb} + {}^{14}_{6}\text{C} 
+\quad Q = 31.8 \, \text{MeV} \quad T_{\nicefrac{1}{2}}^{\text{exp}} = 8.5 \cdot 10^{14} \, \text{s} \\
+{}^{223}_{88}\text{Ra} &\to {}^{219}_{86}\text{Rn} + \alpha 
+\quad \ \, \; Q = 11.2 \, \text{MeV} \quad T_{\nicefrac{1}{2}}^{\text{teo}} = 9.7 \cdot 10^{5} \, \text{s}
+\end{aligned}
+\end{equation*}
+
+Sin embargo a través de los cálculos de la teoría de Gamow vemos que $\dfrac{\lambda_{^{14}\mathrm{C}}}{\lambda_\alpha}\sim 10^{-3}$, por lo que si volvemos a introducir los factores de preformación, las discrepancias nacen de la diferencia de probabilidades de formar los clusters.
+\subsubsection{Emisión de protones}
+No se suelen observar ya que como vimos en la tabla \ref{tab: energia emitida desintegracion alfa} suelen ser negativos, por lo que requerimos núcleos muy ricos en protones para poder observar dicha emisión. Si bombardeamos núcleos pesados podemos sintetizar $^{151} _{\ 72}\mathrm{Lu}$ que se desintegra en $^{150} _{\ 71}\mathrm{Yb}+p$, con un tiempo de semivida $t_{\nicefrac{1}{2}}=\unit[85\pm 10]{ms}$.
+
+\subsection{Momento angular y paridad}
+
+La desintegración $\alpha$ es un proceso fuerte, por lo que conserva paridad y por ser no relativista conserva spin y momento angular orbital.\\\\
+Como no puede ser de otra manera $J^P(\alpha)=0^+$, además el núcleo hijo y la partícula $\alpha$ tienen momento angular relativo $l$, por lo que en un proceso de desintegración $\alpha$ siempre tendremos que 
+\begin{equation*}
+    J_\mathrm{i}=J_\mathrm{f}\otimes J_\alpha \otimes l, \quad P_\mathrm{f}= P_\mathrm{i}(-)^l
+\end{equation*}
+
+Si el núcleo inicial tiene $J^P=0^+$, sólo se observarán las transiciones $0^+\longrightarrow 0^+.1^-,2^+\cdots$. Las intensidad des las transiciones a los diferentes estados excitados debido a que la contribución de la barrera centrífuga se hace dominante cuando aumentamos $l$ y al aumentar la energía de excitación del núcleo hijo.

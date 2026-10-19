@@ -1,0 +1,54 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-feynman} % Paquete para diagramas de Feynman
+\usepackage{amsmath} % Para el símbolo de la llave
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{feynman}
+        % Nodos de partículas con posiciones ajustadas
+        \vertex (i1) at (0,1.5) {\(u\)};
+        \vertex (i2) at (0,0.75) {\(u\)};
+        \vertex (i3)  at (0,{0.75/2}) {\(u\)};
+
+        \vertex (f1) at (3,1.5);
+        \vertex (f2) at (3,0.75);
+        \vertex (f3) at (3,{0.75/2});
+
+        \vertex (dd) at (3,1.125);
+
+        \vertex (piu) at (4,2.25) {\(u\)};
+        \vertex (pid) at (4,1.875) {\(\bar{d}\)};
+
+        \vertex (pd) at (4,0.375) {\(d\)};
+        \vertex (pu1) at (4,0) {\(u\)};
+        \vertex (pu2) at (4,{-0.75/2}) {\(u\)};
+        
+        % Nodo para la llave
+        \node[left] at (-0.15,0.9){$\Delta^{++}$};
+        \node[] at (0,0.9) {\(\left\{\begin{array}{c} \\\\\\\\ \end{array} \right.\)};
+        \node[] at (4.65,2.1){$\pi^{+}$};
+        \node[left] at (4.55,2.0625) {\(\left.\begin{array}{c} \\\\ \end{array} \right \}\)};
+        \node[] at (4.65,-0.02){$p$};
+        \node[left] at (4.55,-0.02) {\(\left.\begin{array}{c} \\\\\\ \end{array} \right \}\)};
+
+        % Diagramas de líneas
+        \diagram* {
+            % Líneas de quarks U
+            (i1) -- [fermion] (f1),
+            (i2) -- [fermion] (f2), 
+            (i3) -- [fermion] (f3),  
+            % Líneas del pion
+            (pid) -- [fermion] (dd),
+            (f1) -- [fermion] (piu),
+            % Líneas del protón
+            (dd) -- [fermion] (pd),
+            (f2) -- [fermion] (pu1),
+            (f3) -- [fermion] (pu2),
+        };
+        
+    \end{feynman}
+\end{tikzpicture}
+
+\end{document}

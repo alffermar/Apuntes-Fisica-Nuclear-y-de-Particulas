@@ -1,0 +1,54 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-feynman} % Paquete para diagramas de Feynman
+\usepackage{amsmath} % Para el símbolo de la llave
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (u) at(-1,1){$u$};
+        \vertex (d) at(1,1){$d^\prime$};
+        \vertex (W1) at(0,0);
+        \vertex (W2) at(0,-1);
+        \node[left] at(0,0){$g_W$};
+        \diagram* {
+            (u) --[fermion] (W1) --[fermion] (d),
+            (W1)--[boson, edge label= $W^\pm$] (W2),
+        };
+        \node[below] at(W2);
+    \end{feynman}
+
+    \node at(1.5,0){=};
+    \begin{scope}[shift={(3,0)}]
+        \begin{feynman}
+        \vertex (u) at(-1,1){$u$};
+        \vertex (d) at(1,1){$d$};
+        \vertex (W1) at(0,0);
+        \vertex (W2) at(0,-1);
+        \node[left] at(0,0){$g_{ud}$};
+        \diagram* {
+            (u) --[fermion] (W1) --[fermion] (d),
+            (W1)--[boson, edge label= $W^\pm$] (W2),
+        };
+       
+    \end{feynman}
+    \end{scope}
+    \node at(4.5,0){+};
+    
+    \begin{scope}[shift={(6,0)}]
+        \begin{feynman}
+        \vertex (u) at(-1,1){$u$};
+        \vertex (d) at(1,1){$s$};
+        \vertex (W1) at(0,0);
+        \vertex (W2) at(0,-1);
+        \node[left] at(0,0){$g_{us}$};
+        \diagram* {
+            (u) --[fermion] (W1) --[fermion] (d),
+            (W1)--[boson, edge label= $W^\pm$] (W2),
+        };
+    \end{feynman}
+    \end{scope}
+\end{tikzpicture}
+
+\end{document}

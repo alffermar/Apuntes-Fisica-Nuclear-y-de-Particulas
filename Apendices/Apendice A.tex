@@ -1,0 +1,65 @@
+\pagestyle{fancy}
+\fancyhead[R]{Física Nuclear y de Partículas: Apéndice A}
+\fancyhead[L]{4º Grado en Física}
+\chapter{Probabilidad de transición en teoría de perturbaciones}
+\label{chap: Apendice A}
+En teoría de perturbaciones dependiente del tiempo, consideramos transiciones (ya sea en colisiones o en desintegraciones) del estado inicial de un sistema, que denotamos por $\Psi$, a un conjunto de estados finales como resultado de una acción de una perturbación, que denotamos por $V(H')$.\\\\
+Nuestro sistema para tiempos $t<0$ viene descrito por un hamiltoniano $H_0$. El sistema está en un estado estacionario de energía $E_m$, que es uno de los autoestados de $H_0$. Por lo tanto 
+\begin{equation}
+    \Psi(0)=\phi_m \exp{-i \frac{E_mt}{\hbar}}
+    \label{eq: estado estacionario}
+\end{equation}
+
+Para $t>0$ comienza a actuar la perturbación y se describe con $H=H_0+V(H')$. Eso da lugar a transiciones a otros estados del sistema $\phi_n$. Por lo tanto
+\begin{equation}
+    \Psi (t)=\sum^\infty _{n=0} c_n(t) \phi_n \exp{-i \frac{E_nt}{\hbar}}
+    \label{eq: ecuacion de onda con perturbacion}
+\end{equation}
+donde las funciones $\phi_n$ son un conjunto completo de autofunciones ortonormales de $H_0$, es decir
+\begin{equation}
+    H_0\phi_n=E_n\phi_n
+    \label{eq: ecuacion de sch independiente del tiempo}
+\end{equation}
+Por tanto, $c_n(0)=1$ para $n=m$ y cero para los demás valores de $n$. La función de onda de la ecuación \ref{eq: estado estacionario} ha de satisfacer la ecuación de Schrödinger dependiente del tiempo
+\begin{equation}
+    H\Psi(t)=i\hbar \pdv{\Psi(t)}{t}
+    \label{eq: ecuacion de sch dependiente del tiempo}
+\end{equation}
+Si sustituimos \ref{eq: ecuacion de onda con perturbacion} en \ref{eq: ecuacion de sch dependiente del tiempo}
+\begin{equation}
+    i\hbar \sum^\infty _{n=0} \qty(\dv{c_n(t)}{t}) \phi_n \exp{-i \frac{E_nt}{\hbar}} =\sum^\infty _{n=0} Vc_n(t) \phi_n \exp{-i \frac{E_nt}{\hbar}}
+    \label{eq: desarrollo ESDT 1}
+\end{equation}
+Multiplicando por $\phi_k^*$ la ecuación \ref{eq: desarrollo ESDT 1} y usando la ortonormalidad $\bra{\phi_k}\ket{\phi_n}=\delta_{kn}$ obtenemos
+\begin{equation}
+   i\hbar \dv{c_k(t)}{t}= \sum^\infty _{n=0} c_n(t) M_{nk} \exp{-i \frac{E_nt}{\hbar}} \quad \text{siendo} \quad M_{nk}=\int \phi_k^* V \phi_n \dd V
+\end{equation}
+
+En teoría de perturbaciones a primer orden la perturbación se supone que es débil y las probabilidades de transición lo suficientemente pequeñas para que durante el tiempo considerado $c_m(t)=1$ y $c_n(t)\simeq 0$ si $n\neq m$. Así, suponiendo que $V$ es constante para $t>0$ e integrando en el tiempo 
+\begin{equation}
+\begin{aligned}
+        c_k(t)=& \frac{-i}{\hbar} \int^t_0 M_{mk} \exp{-i \frac{\qty(E_m-E_k)t}{\hbar}}\dd t=
+        \left. \frac{-i}{\hbar} M_{mk} \frac{\hbar}{-i (E_m-E_k)}  \exp{-i \frac{\qty(E_m-E_k)t}{\hbar}}\right |^t_0= \\ &=M_{mk} \exp{-i \frac{\qty(E_m-E_k)}{2\hbar}t} 2i \frac{\sin(\dfrac{E_m-E_k}{\hbar}t)}{E_m-E_k}
+\end{aligned}
+\end{equation}
+La probabilidad de transición por unuidad de tiempo a todos los estados será 
+\begin{equation}
+    W=\frac{1}{t} \sum_n \abs{c_n(t)}^2=\frac{1}{t} \int^\infty_\infty \abs{c_n(t)}^2 \qty(\dv{N}{E_n}) \dd E_n
+    \label{eq: Probabilidad de transicion por unidad de tiempo}
+\end{equation}
+La primera igualdad representa un conjunto discreto de estados mientras que la segunda representa un conjunto de estados muy próximos entre sí que es lo que ocurre en procesos de colisiones o desintegraciones. $\dfrac{\dd N}{\dd E_n}$ es la densidad de estados por intervalo de energía. Si definimos 
+\begin{equation}
+    x=\frac{E_k-E_m}{2\hbar}t
+\end{equation}
+Entonces 
+\begin{equation}
+    W=\frac{1}{t} 4\abs{M_{mk}}^2 \int^\infty_\infty \frac{t^2}{4\hbar^2} \frac{\sin^2{x}}{x^2} \frac{2\hbar}{t} \dd x=\frac{2}{\hbar} \int^\infty_\infty \qty(\dv{N}{E}) \frac{\sin^2{x}}{x^2} \dd x
+\end{equation}
+La función $\dfrac{\sin^2{x}}{x^2}$ tiene un máximo para $x=0$ i.e $E_k=E_m$ y el primer cero es en $x=\pm \pi$. La contribución a la intergal más allá de $x=\pm \pi$ es pequeña $\sim 10\%$. El correspondiente intervalo de energía es $\dd E_k=\dfrac{2\pi \hbar}{t} \sim \unit[4 \cdot 10^{-15}]{eV}$ para $t=\unit[1]{s}$. Esto se debe a que la energía se debe conservar dentro de los límites del principio de incertidumbre, $E_k \approx E_m$. Por tanto, la densidad de estados se puede considerar constante sobre el intervbalo $\dd E_n$ y usando que $$\int^\infty_\infty \frac{\sin^2{x}}{x^2} \dd x =\pi $$ se obtiene 
+\begin{equation}
+    W=\frac{2\pi}{\hbar} \abs{M_\text{if}}^2 \dv{N}{E_\text{f}} \quad \text{con} \quad M_\text{if}=\bra{\phi_\text{f}}V\ket{\phi_\text{i}}
+    \label{eq: regla de oro de fermi}
+\end{equation}
+Es decir, el elemento de matriz en la transición de un estado inicial $i$ a un conjunto de estados finales $f$. $\phi_i$ y $\phi_f$  corresponde a la parte espacial de las funciones de onda. A la densidad de estados finales se les suele denotar como $\dfrac{\dd N}{\dd E_\text{f}}=\rho_\text{f}$ y se denomina espacio fásico. Esta expresión se conoce como la \textbf{regla de oro de Fermi} de la mecánica cuántica no relativista.\\\\
+Aunque la deducción de la regla de oro la hemos hecho para teoría de perturbaciones, el resultado es también válido para el caso general.
+

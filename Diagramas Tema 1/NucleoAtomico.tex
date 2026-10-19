@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{siunitx} % Para la notación de unidades
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Núcleo
+    \node[circle, draw, fill=gray!20, minimum size=2cm, inner sep=0pt] (nucleus) {};
+    
+    % Definir radio
+    \def\R{1} % Radio del núcleo 
+
+    % Posiciones de protones y neutrones
+    \foreach \x in {-0.75, -0.45, -0.15, 0.15, 0.45, 0.75} {
+        \foreach \y in {-0.75, -0.45, -0.15, 0.15, 0.45, 0.75} {
+            % Verificar si el punto está dentro del núcleo
+            \pgfmathsetmacro{\dist}{sqrt(\x*\x + \y*\y)}
+            \ifdim\dist pt<\R pt
+                \pgfmathsetmacro{\color}{mod(\x*\y*10, 3)} % Color alternante modificado
+                \ifnum \color=0
+                    \node[circle, draw, fill=blue, minimum size=0.2cm, inner sep=0pt] at (\x, \y) {n⁰}; % Neutrones
+                \else
+                    \node[circle, draw, fill=red, minimum size=0.2cm, inner sep=0pt] at (\x, \y) {p⁺}; % Protonos
+                \fi
+            \fi
+        }
+    }
+    \draw[latex-latex] (-1,-1.25)--(1,-1.25);
+    \node[below] at (0,-1.25){\SI{1e-14}{m}};
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+    % Ejes (solo el primer cuadrante)
+    \draw[-latex] (0,0) -- (4,0) node[below right] {\(t\)};
+    \draw[-latex] (0,0) -- (0,1.7) node[left] {\(A(t)\)};
+    
+    % Parábola (en el primer cuadrante)
+    \draw[thick, domain=0:0.5, smooth, variable=\x]
+        plot ({\x}, {\x*(ln(2.5)-0.1)/0.5}); 
+    \draw[thick] (0.5,{ln(2.5)-0.1}) to[out=58, in=180](2.51,1.49);
+    \draw[thick, domain=2.5:3.8, smooth, variable=\x]
+        plot ({\x}, {1.5*((1-exp(-2*2.5))*exp(-2*(\x-2.5)))}); 
+    
+\end{tikzpicture}
+
+\end{document}
