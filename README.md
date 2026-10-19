@@ -29,7 +29,7 @@ Si modificas alguna figura, o si sus PDF no están en la carpeta, compílalas **
 ```bash
 cd Imagenes/Standalone
 latexmk                                   # compila todas las figuras que hayan cambiado
-latexmk T3_05_representacion_IV_PN.tex    # compila una única figura
+latexmk B_AnguloSolido.tex    # compila una única figura
 ```
 El `latexmkrc` de la carpeta usa LuaLaTeX, deja cada PDF junto a su `.tex` y guarda los archivos auxiliares en `build/`. También se puede compilar una figura suelta con `lualatex <figura>.tex` desde esa misma carpeta.
 
